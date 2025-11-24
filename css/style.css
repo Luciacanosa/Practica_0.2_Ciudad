@@ -1,0 +1,66 @@
+/* efectos del cursor */
+
+body {
+  cursor: none; /* Oculta el cursor por defecto */
+}
+
+/* tipografía títulos y cosas importantes */
+
+.climate-crisis  {
+  font-family: "Climate Crisis", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "YEAR" 1979;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff0000; /* color del borde */
+  border-radius: 50%;        /* forma circular */
+  position: fixed;
+  pointer-events: none;      /* evita que bloquee clics */
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  z-index: 9999;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Menú de navegación */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #d33;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 40px;
+  margin: 25px;
+}
