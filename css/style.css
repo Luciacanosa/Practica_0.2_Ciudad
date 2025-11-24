@@ -108,6 +108,7 @@
   background-color: #d33;
   max-width: 1200px;
   margin: 0 auto; 
+  border-radius: 20px;
 }
 
 .bloque {
@@ -122,7 +123,7 @@
   width: 700px;
   background-color: #fff3e0;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   display: flex;
   flex-direction: column;
@@ -155,7 +156,7 @@
   max-height: 700px; 
   max-width: 700px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 
 /* Responsivo: en móviles apila y pon texto encima */
@@ -164,3 +165,123 @@
     flex-direction: column;
   }
 } */
+
+
+/* layout parte turismo en la pag principal */
+/* intentar hacer un layout con flexvos más divertido */
+/* Layout de turismo */
+.turismo-collage {
+  display: flex;
+  gap: 20px;
+  padding: 60px 30px;
+  height: 700px; /* altura total del collage */
+  border-radius: 20px;
+  font-family: "Climate Crisis", sans-serif;
+font-size: 30px;
+}
+
+/* Columnas */
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+/* Izquierda */
+.izquierda {
+  flex: 1;
+  border-radius: 20px;
+  font-display: center;
+}
+
+.alto {
+  flex: 3;
+  background-color: #cce5ff;
+  border-radius: 20px;
+}
+
+.bajo {
+  flex: 1;
+  background-color: #d4edda;
+  border-radius: 20px;
+}
+
+/* Centro */
+.centro {
+  flex: 2;
+  border-radius: 20px;
+}
+
+.grande {
+  flex: 1;
+  background-color: #f8d7da;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.bloque-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  border-radius: 20px;
+}
+
+.mini-bloque {
+  background-color: #fff3cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+/* Derecha */
+.derecha {
+  flex: 1;
+  border-radius: 20px;
+}
+
+.completo {
+  flex: 1;
+  background-color: #e2e3e5;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+/* Imagen derecha completa */
+.imagen-derecha {
+  background-image: url("assets/imágenes pag principal/templo.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+/* Imagen centro abajo izquierda */
+.imagen-centro-izquierda {
+  background-image: url('assets/imágenes pag principal/templo.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+.imagen-derecha,
+.imagen-centro-izquierda {
+  color: transparent;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
