@@ -181,6 +181,28 @@
   z-index: 1;
 }
 
+/* botón dentro del flexbos de historia y cuyltura que te lleve a la pagina de informacion por si quieres leer más sobre el tema
+ */
+ .btn-vermas {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 5px;
+  background-color: #d33;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  font-family: "Climate Crisis", sans-serif;;
+}
+
+.btn-vermas:hover {
+  background-color: #a22;
+}
+
+
 
 /* Responsivo: en móviles apila y pon texto encima */
 /* @media (max-width: 768px) {
