@@ -23,18 +23,31 @@
 
 
 /* efectos del cursor */
+ html, body, * {
+  cursor: none !important;
+}
 
-/* .cursor {
+
+.cursor {
   width: 20px;
   height: 20px;
-  border: 2px solid #ff0000; 
-  border-radius: 50%;        
-  position: fixed;
-  pointer-events: none;      
-  transform: translate(-50%, -50%);
+  border: 2px solid #ff0000;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: fixed;           /* ligado al viewport */
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* centra el círculo en el puntero */
   transition: transform 0.1s ease;
   z-index: 9999;
-} */
+  top: 0;
+  left: 0;
+}
+
+.cursor-grow {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+
 
 /* Reset básico */
 * {
@@ -63,7 +76,7 @@
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
-  color: #d33;
+  color: #ff0000;
 }
 
 .nav-links a {
@@ -97,6 +110,83 @@
   font-family: "Climate Crisis", sans-serif;
 }
 
+
+/* ventana modal ULTIMA OPORTUNIDAD JRPASS */
+.modal {
+  display: none; /* oculta por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+
+  /* centrado con flexbox */
+  align-items: center;
+  justify-content: center;
+}
+
+.show-modal {
+  display: flex; /* se muestra y se centra */
+}
+
+
+.modal-content {
+  background-color: #ff0000;
+  padding: 3rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  color: #fff;
+  position: relative; /* necesario para posicionar la X dentro */
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+.modal-content h2 {
+  color: #fff;
+  font-family: "Climate Crisis", sans-serif;
+}
+
+.modal-content p {
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.show-modal {
+  display: flex; /* 👈 activa el flexbox para centrar */
+}
+
+.btn-turismo {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff0000;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px; /* más redondeado */
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-family: "Climate Crisis", sans-serif;
+}
+
+.btn-turismo:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+
 /* sección resumen sobre kyoto de la página pricipal */
 
 /* Resumen con Flexbox */
@@ -105,7 +195,7 @@
   flex-direction: column;
   gap: 80px;
   padding: 80px 40px;
-  background-color: #d33;
+  background-color: #ff0000;
   max-width: 1200px;
   margin: 0 auto; 
   border-radius: 20px;
@@ -139,7 +229,7 @@
 .texto h2 {
   font-size: 40px;
   margin-bottom: 15px;
-  color: #d33;
+  color: #ff0000;
   font-family: "Climate Crisis", sans-serif;
 }
 
@@ -186,8 +276,8 @@
  .btn-vermas {
   display: inline-block;
   margin-top: 20px;
-  padding: 12px 5px;
-  background-color: #d33;
+  padding: 12px 24px;
+  background-color: #ff0000;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
@@ -258,16 +348,41 @@ font-size: 30px;
   border-radius: 20px;
 }
 
+/* Bloque grande en rojo con tipografía blanca */
 .grande {
   flex: 1;
-  background-color: #f8d7da;
+  background-color: #ff0000; /* rojo */
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   font-weight: bold;
   border-radius: 20px;
+  color: #fff; /* tipografía blanca */
+  text-decoration: none; /* quitar subrayado si es enlace */
+  transition: background 0.3s ease;
 }
+
+.grande:hover {
+  background-color: #cc0000; /* tono más oscuro al pasar el ratón */
+}
+
+/* Imagen centro abajo izquierda */
+.imagen-centro-izquierda {
+  background-image: url("assets/imágenes pag principal/kimono");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
+/* Imagen derecha completa */
+.imagen-derecha {
+  background-image: url("assets/imágenes pag principal/kyoto2"); /* usa otra imagen distinta */
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+}
+
 
 .bloque-grid {
   flex: 1;
@@ -304,29 +419,43 @@ font-size: 30px;
   border-radius: 20px;
 }
 
-/* Imagen derecha completa */
-.imagen-derecha {
-  background-image: url("assets/imágenes pag principal/templo.jpg");
+
+
+/* Bloque grande en rojo con tipografía blanca */
+.grande {
+  flex: 1;
+  background-color: #ff0000; /* rojo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: bold;
+  border-radius: 20px;
+  color: #fff; /* tipografía blanca */
+  text-decoration: none; /* quitar subrayado si es enlace */
+  transition: background 0.3s ease;
+}
+
+.grande:hover {
+  background-color: #cc0000; /* tono más oscuro al pasar el ratón */
+}
+
+.imagen-centro-izquierda {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Kiyomizu-dera_in_Kyoto.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 20px;
-}
-
-/* Imagen centro abajo izquierda */
-.imagen-centro-izquierda {
-  background-image: url('assets/imágenes pag principal/templo.jpg');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-
-.imagen-derecha,
-.imagen-centro-izquierda {
-  color: transparent;
-  background-size: cover;
-  background-position: center;
   width: 100%;
-  height: 100%;
-  border-radius: 20px;
+  height: 100%; /* 👈 necesario */
+  min-height: 200px; /* 👈 asegura que se vea */
 }
 
+.imagen-derecha {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Fushimi_Inari-taisha_torii.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%; /* 👈 necesario */
+  min-height: 400px; /* 👈 asegura que se vea */
+}

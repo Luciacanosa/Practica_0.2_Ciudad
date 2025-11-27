@@ -8,9 +8,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-    <!-- <div class="cursor"></div> -->
+
+  <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
+    <div class="cursor"></div>
+
+
+<!-- ventana modal que aparece a los diez segundo sobre el JR PASS -->
+
+<!-- Botón opcional para abrir manualmente -->
+<button id="openModal" class="btn-modal">Abrir Modal</button>
+
+<!-- Ventana modal -->
+<div id="modalWindow" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>ULTIMA OPORTUNIDAD!</h2>
+    <p>
+      Si estás pensando en viajar a Kyoto, esta es tu oportunidad.<br>
+      Quedan las últimas diez plazas para viajar por todo Japón en tren con tu JR PASS.
+    </p>
+    <a href="https://www.japan.travel/es/es/" target="_blank" class="btn-turismo">
+      Ir a la página de turismo
+    </a>
+  </div>
+</div>
+
 
 
   <!-- Menú de navegación -->
@@ -72,7 +98,7 @@
 
 </section>
 
- <!-- Layout de turismo -->
+<!-- Layout de turismo -->
 <section class="turismo-collage">
   <!-- Columna izquierda -->
   <div class="columna izquierda">
@@ -82,24 +108,24 @@
 
   <!-- Columna central -->
   <div class="columna centro">
-    <div class="bloque grande">Descubre Kyoto</div>
+    <!-- Bloque grande con enlace -->
+    <a href="https://www.japan.travel/es/es/" target="_blank" class="bloque grande enlace-turismo">
+      Descubre Kyoto
+    </a>
+
     <div class="bloque-grid">
-  <div class="mini-bloque imagen-centro-izquierda"></div>
-  <div class="mini-bloque">Itinerarios</div>
-  <div class="mini-bloque">Experiencias</div>
-  <div class="mini-bloque">Rutas secretas</div>
-</div>
-</div>
+      <div class="mini-bloque imagen-centro-izquierda"></div>
+      <div class="mini-bloque">Itinerarios</div>
+      <div class="mini-bloque">Experiencias</div>
+      <div class="mini-bloque">Rutas secretas</div>
+    </div>
+  </div>
 
   <!-- Columna derecha -->
- <div class="columna derecha">
-  <div class="bloque completo imagen-derecha">
-    
+  <div class="columna derecha">
+    <div class="bloque completo imagen-derecha"></div>
   </div>
-</div>
 </section>
-
-
 
 
 
