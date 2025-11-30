@@ -7,6 +7,13 @@ $(document).mousemove(function (e) {
   });
 });
 
+document.addEventListener("mousemove", (e) => {
+  const el = document.querySelector(".cursor");
+  if (!el) return;
+  el.style.left = e.clientX + "px";
+  el.style.top  = e.clientY + "px";
+});
+
 // opcional: efecto al pasar por enlaces
 $("a").hover(
   function () {
@@ -73,3 +80,53 @@ function iniciarCarrusel(selector) {
 // Inicia cada carrusel por separado
 iniciarCarrusel(".carrusel.historia");
 iniciarCarrusel(".carrusel.cultura");
+
+
+
+
+// PÁGINA NEWSLETTER
+
+// Mostrar el día actual
+$(document).ready(function() {
+  const dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+  let hoy = new Date();
+  $("#diaActual").text("Hoy es " + dias[hoy.getDay()]);
+
+  $(document).ready(function() {
+  const estados = [
+    "Despejado",
+    "Mayormente nublado",
+    "Parcialmente nublado",
+    "Lluvias ligeras",
+    "Tormentas aisladas"
+  ];
+
+  // Cambia el estado del tiempo cada 6 segundos en cada bloque
+  $(".dia").each(function(index, element) {
+    let estadoElem = $(element).find(".estado");
+    let i = 0;
+    setInterval(function() {
+      i = (i + 1) % estados.length;
+      estadoElem.fadeOut(300, function() {
+        $(this).text(estados[i]).fadeIn(300);
+      });
+    }, 6000 + index * 500); // escalonado para que no cambien todos a la vez
+  });
+});
+
+
+  // Efecto dinámico en el tráfico (cambia cada 7 segundos)
+  const estadosTrafico = [
+    "Tráfico fluido en la mayoría de avenidas",
+    "Congestión en el centro histórico",
+    "Retrasos en la línea de autobuses",
+    "Carreteras despejadas hacia los templos"
+  ];
+  let indexTrafico = 0;
+  setInterval(function() {
+    indexTrafico = (indexTrafico + 1) % estadosTrafico.length;
+    $("#traficoTexto").slideUp(500, function() {
+      $(this).text(estadosTrafico[indexTrafico]).slideDown(500);
+    });
+  }, 7000);
+});

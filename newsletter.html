@@ -1,11 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Kyoto</title>
+  <meta charset="UTF-8">
+  <title>Newsletter</title>
+   <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
-    
+<style>
+  .cursor-test {
+    position: fixed;
+    left: 50px;
+    top: 50px;
+    width: 30px;
+    height: 30px;
+    background: #ff0000;
+    border-radius: 50%;
+    z-index: 100000;
+  }
+</style>
+<div class="cursor-test"></div>
+
+
+  <!-- Menú de navegación -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html">Kyoto</a>
+    </div>
+    <nav class="nav-links">
+      <a href="turismo.html">Turismo</a>
+      <a href="informacion.html">Información</a>
+      <a href="newsletter.html">Newsletter</a>
+    </nav>
+  </header>
+
+   <!-- Cabecera con imagen de fondo -->
+  <section class="hero">
+    <h1>Newsletter</h1>
+  </section>
+  <!-- Día de la semana -->
+  <section class="dia-semana">
+    <h2 id="diaActual"></h2>
+  </section>
+
+  <!-- Tiempo de la semana -->
+  <section class="tiempo-semana">
+  <h2>Pronóstico semanal para Kyoto</h2>
+  <div class="forecast-grid">
+    <div class="dia">
+      <h3>Domingo</h3>
+      <p class="estado">Despejado</p>
+      <p class="precipitacion">18–24h: 10%</p>
+    </div>
+    <div class="dia">
+      <h3>Lunes</h3>
+      <p class="estado">Mayormente nublado</p>
+      <p class="temperatura">Máx: 19°C / Mín: 8°C</p>
+      <p class="precipitacion">12–18h: 20%</p>
+    </div>
+    <div class="dia">
+      <h3>Martes</h3>
+      <p class="estado">Parcialmente nublado</p>
+      <p class="precipitacion">Sin datos</p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Noticias recientes -->
+  <section class="noticias">
+    <h2>Noticias recientes sobre Kyoto</h2>
+    <div class="noticias-grid">
+      <article class="noticia">Nueva exposición en el Museo de Kyoto</article>
+      <article class="noticia">Festival de otoño en los templos</article>
+      <article class="noticia">Mejoras en el transporte público</article>
+      <article class="noticia">Kyoto premiada como ciudad cultural</article>
+    </div>
+  </section>
+
+  <!-- Tráfico -->
+  <section class="trafico">
+    <h2>Estado del tráfico en Kyoto</h2>
+    <p id="traficoTexto">Tráfico fluido en la mayoría de avenidas</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
