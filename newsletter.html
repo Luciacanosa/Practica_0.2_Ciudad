@@ -11,19 +11,7 @@
 
 </head>
 <body>
-<style>
-  .cursor-test {
-    position: fixed;
-    left: 50px;
-    top: 50px;
-    width: 30px;
-    height: 30px;
-    background: #ff0000;
-    border-radius: 50%;
-    z-index: 100000;
-  }
-</style>
-<div class="cursor-test"></div>
+    <div class="cursor"></div>
 
 
   <!-- Menú de navegación -->
@@ -47,8 +35,8 @@
     <h2 id="diaActual"></h2>
   </section>
 
-  <!-- Tiempo de la semana -->
-  <section class="tiempo-semana">
+<!-- Tiempo semanal (pantalla completa, sin caja) -->
+<section class="tiempo-semana-full">
   <h2>Pronóstico semanal para Kyoto</h2>
   <div class="forecast-grid">
     <div class="dia">
@@ -70,17 +58,37 @@
   </div>
 </section>
 
+<!-- Noticias recientes (estilo premium) -->
+<section class="noticias-full">
+  <h2>Actualidad en Kyoto</h2>
+  <div class="noticias-grid">
+    <article class="noticia-caja">
+      <img src="https://kyoto.travel/assets/img/news/autumn-leaves.jpg" alt="Hojas de otoño en Kyoto">
+      <h3>Calendario de hojas de otoño actualizado</h3>
+      <p>Descubre los mejores lugares para ver el momiji este noviembre.</p>
+      <a href="https://kyoto.travel/es/news/" target="_blank" class="btn-noticia">Saber más</a>
+    </article>
+    <article class="noticia-caja">
+      <img src="https://kyoto.travel/assets/img/news/winter-openings.jpg" alt="Templos en invierno">
+      <h3>Aperturas especiales de invierno</h3>
+      <p>60ª edición con acceso exclusivo a templos históricos.</p>
+      <a href="https://kyoto.travel/es/news/" target="_blank" class="btn-noticia">Saber más</a>
+    </article>
+    <article class="noticia-caja">
+      <img src="https://elpais.com/resizer/news-kyoto.jpg" alt="Festival de fotografía Kyotographie">
+      <h3>Kyotographie: arte y reflexión</h3>
+      <p>El festival reúne obras de Martin Parr y Graciela Iturbide.</p>
+      <a href="https://elpais.com/noticias/kioto/" target="_blank" class="btn-noticia">Saber más</a>
+    </article>
+    <article class="noticia-caja">
+      <img src="https://noticiasnippon.jp/wp-content/uploads/2025/11/accidente-kyoto.jpg" alt="Accidente en Kyoto">
+      <h3>Accidente múltiple en Kyoto</h3>
+      <p>Un atropello deja un muerto y diez heridos en el centro.</p>
+      <a href="https://noticiasnippon.jp/2025/11/" target="_blank" class="btn-noticia">Saber más</a>
+    </article>
+  </div>
+</section>
 
-  <!-- Noticias recientes -->
-  <section class="noticias">
-    <h2>Noticias recientes sobre Kyoto</h2>
-    <div class="noticias-grid">
-      <article class="noticia">Nueva exposición en el Museo de Kyoto</article>
-      <article class="noticia">Festival de otoño en los templos</article>
-      <article class="noticia">Mejoras en el transporte público</article>
-      <article class="noticia">Kyoto premiada como ciudad cultural</article>
-    </div>
-  </section>
 
   <!-- Tráfico -->
   <section class="trafico">
@@ -93,6 +101,6 @@
     <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
