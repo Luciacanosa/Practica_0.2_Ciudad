@@ -8,7 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </head>
 <body>
@@ -40,16 +43,24 @@
 
 
   <!-- Menú de navegación -->
-  <header class="navbar">
-    <div class="logo">
-  <a href="index.html">Kyoto</a>
-</div>
-    <nav class="nav-links">
-      <a href="turismo.html">Turismo</a>
-      <a href="informacion.html">Información</a>
-      <a href="newsletter.html">Newsletter</a>
-    </nav>
-  </header>
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">Kyoto</a>
+  </div>
+
+  <!-- Icono hamburguesa -->
+  <div class="burger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <!-- Menú de navegación -->
+  <nav class="nav-links menu">
+    <a href="turismo.html">Turismo</a>
+    <a href="informacion.html">Información</a>
+    <a href="newsletter.html">Newsletter</a>
+  </nav>
+</header>
+
    <!-- Cabecera con imagen de fondo -->
   <section class="hero">
     <h1>Kyoto</h1>
@@ -98,21 +109,18 @@
 
 </section>
 
-<!-- Layout de turismo -->
 <section class="turismo-collage">
   <!-- Columna izquierda -->
   <div class="columna izquierda">
-    <div class="bloque alto">Naturaleza</div>
-    <div class="bloque bajo">Estancia en templos</div>
+    <div class="alto">Naturaleza</div>
+    <div class="bajo">Estancia en templos</div>
   </div>
 
   <!-- Columna central -->
   <div class="columna centro">
-    <!-- Bloque grande con enlace -->
-    <a href="https://www.japan.travel/es/es/" target="_blank" class="bloque grande enlace-turismo">
+    <a href="https://www.japan.travel/es/es/" target="_blank" class="grande enlace-turismo">
       Descubre Kyoto
     </a>
-
     <div class="bloque-grid">
       <div class="mini-bloque imagen-centro-izquierda"></div>
       <div class="mini-bloque">Itinerarios</div>
@@ -123,7 +131,7 @@
 
   <!-- Columna derecha -->
   <div class="columna derecha">
-    <div class="bloque completo imagen-derecha"></div>
+    <div class="completo imagen-derecha"></div>
   </div>
 </section>
 

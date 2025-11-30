@@ -62,7 +62,7 @@ html, body {
 
 /* CSS DE LA PÁGINA PRINCIPAL */
 
-/* Menú de navegación */
+/* Navbar base */
 .navbar {
   position: fixed;
   top: 0;
@@ -96,6 +96,43 @@ html, body {
   font-family: "Climate Crisis", sans-serif;
   font-size: 40px;
   margin: 25px;
+}
+
+/* Icono hamburguesa */
+.burger {
+  display: none;
+  font-size: 30px;
+  color: #ff0000;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .menu-show {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 28px;
+  }
 }
 
 
@@ -311,17 +348,14 @@ html, body {
 } */
 
 
-/* layout parte turismo en la pag principal */
-/* intentar hacer un layout con flexvos más divertido */
-/* Layout de turismo */
 .turismo-collage {
   display: flex;
   gap: 20px;
   padding: 60px 30px;
-  height: 700px; /* altura total del collage */
+  height: 700px;
   border-radius: 20px;
   font-family: "Climate Crisis", sans-serif;
-font-size: 30px;
+  font-size: 30px;
 }
 
 /* Columnas */
@@ -330,68 +364,54 @@ font-size: 30px;
   flex-direction: column;
   gap: 20px;
   border-radius: 20px;
+  flex: 1;
 }
 
 /* Izquierda */
-.izquierda {
-  flex: 1;
-  border-radius: 20px;
-  font-display: center;
-}
-
-.alto {
+.izquierda .alto {
   flex: 3;
   background-color: #cce5ff;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.bajo {
+.izquierda .bajo {
   flex: 1;
   background-color: #d4edda;
   border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Centro */
 .centro {
   flex: 2;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Bloque grande en rojo con tipografía blanca */
 .grande {
   flex: 1;
-  background-color: #ff0000; /* rojo */
+  background-color: #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 50px;
   font-weight: bold;
   border-radius: 20px;
-  color: #fff; /* tipografía blanca */
-  text-decoration: none; /* quitar subrayado si es enlace */
+  color: #fff;
+  text-decoration: none;
   transition: background 0.3s ease;
 }
 
 .grande:hover {
-  background-color: #cc0000; /* tono más oscuro al pasar el ratón */
+  background-color: #cc0000;
 }
-
-/* Imagen centro abajo izquierda */
-.imagen-centro-izquierda {
-  background-image: url("assets/imágenes pag principal/kimono");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-
-/* Imagen derecha completa */
-.imagen-derecha {
-  background-image: url("assets/imágenes pag principal/kyoto2"); /* usa otra imagen distinta */
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-}
-
 
 .bloque-grid {
   flex: 1;
@@ -411,6 +431,25 @@ font-size: 30px;
   border-radius: 20px;
 }
 
+/* Imágenes */
+.imagen-centro-izquierda {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Kiyomizu-dera_in_Kyoto.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.imagen-derecha {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Fushimi_Inari-taisha_torii.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
 /* Derecha */
 .derecha {
   flex: 1;
@@ -419,56 +458,9 @@ font-size: 30px;
 
 .completo {
   flex: 1;
-  background-color: #e2e3e5;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
   border-radius: 20px;
 }
-
-
-
-/* Bloque grande en rojo con tipografía blanca */
-.grande {
-  flex: 1;
-  background-color: #ff0000; /* rojo */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  font-weight: bold;
-  border-radius: 20px;
-  color: #fff; /* tipografía blanca */
-  text-decoration: none; /* quitar subrayado si es enlace */
-  transition: background 0.3s ease;
-}
-
-.grande:hover {
-  background-color: #cc0000; /* tono más oscuro al pasar el ratón */
-}
-
-.imagen-centro-izquierda {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Kiyomizu-dera_in_Kyoto.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  width: 100%;
-  height: 100%; /* 👈 necesario */
-  min-height: 200px; /* 👈 asegura que se vea */
-}
-
-.imagen-derecha {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Fushimi_Inari-taisha_torii.jpg");
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  width: 100%;
-  height: 100%; /* 👈 necesario */
-  min-height: 400px; /* 👈 asegura que se vea */
-}
-
 
 
 
