@@ -147,3 +147,65 @@ $(document).ready(function() {
     });
   }, 7000);
 });
+
+
+
+
+
+// js y jquery para turismo
+$(document).ready(function() {
+  // Carrusel automático en naturaleza
+  let index = 0;
+  const images = $(".turismo-carrusel img");
+  setInterval(function() {
+    images.removeClass("active");
+    index = (index + 1) % images.length;
+    images.eq(index).addClass("active");
+  }, 4000);
+
+  // Animación de entrada en texto de naturaleza
+  $(".turismo-texto").hide().fadeIn(1500);
+
+  // Zoom en imagen de guías
+  $(".guias .turismo-imagen img").hover(function() {
+    $(this).css("transform", "scale(1.05)");
+  }, function() {
+    $(this).css("transform", "scale(1)");
+  });
+
+  // Rebote en botón de guías
+  $(".guias .turismo-btn").hover(function() {
+    $(this).animate({ marginTop: "-5px" }, 200).animate({ marginTop: "0px" }, 200);
+  });
+
+  // Scroll reveal en templos
+  $(window).on("scroll", function() {
+    $(".templos .turismo-contenido").each(function() {
+      if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+        $(this).fadeIn(1000);
+      }
+    });
+  });
+
+  // Flip en tarjetas de itinerarios
+  $(".itinerarios .tarjeta").hover(function() {
+    $(this).toggleClass("flipped");
+  });
+
+  // Modal Rail Pass
+  $(".railpass .turismo-btn").click(function(e) {
+    e.preventDefault();
+    $("#modalWindow").addClass("show-modal");
+  });
+
+  $(".close").click(function() {
+    $("#modalWindow").removeClass("show-modal");
+  });
+
+  $(window).click(function(e) {
+    if ($(e.target).is("#modalWindow")) {
+      $("#modalWindow").removeClass("show-modal");
+    }
+  });
+});
+
