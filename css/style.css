@@ -517,6 +517,78 @@ html, body {
   font-weight: bold;
   cursor: pointer;
 }
+
+
+/* Naturaleza */
+.turismo-naturaleza {
+  padding: 80px 40px;
+  background-color: #f0f8ff;
+}
+.turismo-naturaleza h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 40px;
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.carrusel {
+  position: relative;
+  height: 400px;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slide::after {
+  content: attr(data-info);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255,0,0,0.7);
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding: 10px;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.slide:hover::after {
+  opacity: 1;
+}
+.puntos {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+.punto {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.punto.active {
+  background-color: #ff0000;
+}
+
 /* Rail Pass */
 .turismo-railpass {
   background-color: #ff0000;        /* rojo Kyoto */
