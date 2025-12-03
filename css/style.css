@@ -650,6 +650,34 @@ html, body {
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
 }
+
+/* Itinerarios */
+.turismo-itinerarios {
+  padding: 80px 40px;
+  background-color: #fff;
+  text-align: center;
+}
+.turismo-itinerarios h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 36px;
+  color: #ff0000;
+  margin-bottom: 20px;
+}
+.turismo-itinerarios p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+#abrir-modal {
+  padding: 12px 24px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* Rail Pass */
 .turismo-railpass {
   background-color: #ff0000;        /* rojo Kyoto */
