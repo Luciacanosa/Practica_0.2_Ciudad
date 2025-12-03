@@ -45,61 +45,71 @@
    <!-- Índice visual -->
   <section class="turismo-indice">
     <div class="indice-item" onclick="location.href='#naturaleza'">
-      <img src="img/naturaleza.jpg" alt="Naturaleza">
+      <img src="assets/imagenes turismo/naturaleza.jpg" alt="Naturaleza">
       <h3>Naturaleza</h3>
       <button>Ver sección</button>
     </div>
     <div class="indice-item" onclick="location.href='#guias'">
-      <img src="img/guias.jpg" alt="Guías">
+      <img src="assets/imagenes turismo/guias.jpg" alt="Guías">
       <h3>Guías</h3>
       <button>Ver sección</button>
     </div>
     <div class="indice-item" onclick="location.href='#templos'">
-      <img src="img/templos.jpg" alt="Templos">
+      <img src="assets/imagenes turismo/templos.jpg" alt="Templos">
       <h3>Templos</h3>
       <button>Ver sección</button>
     </div>
     <div class="indice-item" onclick="location.href='#itinerarios'">
-      <img src="img/itinerarios.jpg" alt="Itinerarios">
+      <img src="assets/imagenes turismo/itinerarios.jpg" alt="Itinerarios">
       <h3>Itinerarios</h3>
       <button>Ver sección</button>
     </div>
     <div class="indice-item" onclick="location.href='#railpass'">
-      <img src="img/railpass.jpg" alt="Rail Pass">
+      <img src="assets/imagenes turismo/railpass.png" alt="Rail Pass">
       <h3>Rail Pass</h3>
       <button>Ver sección</button>
     </div>
   </section>
 
-    <!-- Naturaleza -->
-  <!-- Naturaleza -->
-  <section id="naturaleza" class="turismo-naturaleza">
-    <h2>Naturaleza</h2>
-    <div class="carrusel">
-      <div class="slide active" data-info="Bosque de bambú - Arashiyama">
-        <img src="img/arashiyama.jpg" alt="Arashiyama">
+  <!-- naturaleza -->
+
+<section class="turismo-naturaleza" id="naturaleza">
+  <h2>Naturaleza</h2>
+
+  <div class="turismo-nat-carousel" aria-label="Carrusel de parques y bosques de Kyoto">
+    <div class="turismo-nat-track">
+      <div class="turismo-nat-slide" data-info="Arashiyama: bosque de bambú y río Katsura.">
+        <img src="assets/imagenes turismo/naturaleza.jpg" alt="Arashiyama, bosque de bambú">
       </div>
-      <div class="slide" data-info="Jardín Imperial">
-        <img src="img/imperial.jpg" alt="Imperial">
+      <div class="turismo-nat-slide" data-info="Jardín Imperial: paseos históricos y naturaleza cuidada.">
+        <img src="assets/imagenes turismo/jardinimperial.png" alt="Jardín Imperial de Kyoto">
       </div>
-      <div class="slide" data-info="Parque Maruyama">
-        <img src="img/maruyama.jpg" alt="Maruyama">
+      <div class="turismo-nat-slide" data-info="Parque Maruyama: cerezos y templo Yasaka cerca.">
+        <img src="assets/imagenes turismo/parquemarayuma.jpg" alt="Parque Maruyama">
       </div>
-      <div class="slide" data-info="Kyoto Gyoen">
-        <img src="img/gyoen.jpg" alt="Gyoen">
+      <div class="turismo-nat-slide" data-info="Kyoto Gyoen: praderas amplias y senderos tranquilos.">
+        <img src="assets/imagenes turismo/gyoen.jpg" alt="Kyoto Gyoen National Garden">
       </div>
-      <div class="slide" data-info="Umekoji Park">
-        <img src="img/umekoji.jpg" alt="Umekoji">
+      <div class="turismo-nat-slide" data-info="Río Kamo: ciclovías y vida local junto al agua.">
+        <img src="assets/imagenes turismo/umekojipark20191.jpg" alt="Río Kamo en Kyoto">
       </div>
     </div>
-    <div class="puntos">
-      <span class="punto active" data-index="0"></span>
-      <span class="punto" data-index="1"></span>
-      <span class="punto" data-index="2"></span>
-      <span class="punto" data-index="3"></span>
-      <span class="punto" data-index="4"></span>
-    </div>
-  </section>
+
+    <!-- Overlay informativo -->
+    <div class="turismo-nat-overlay" aria-hidden="true"></div>
+  </div>
+
+  <!-- Puntos -->
+  <div class="turismo-nat-dots" role="tablist" aria-label="Navegación del carrusel">
+    <button class="turismo-nat-dot active" aria-label="Ver slide 1" aria-selected="true"></button>
+    <button class="turismo-nat-dot" aria-label="Ver slide 2"></button>
+    <button class="turismo-nat-dot" aria-label="Ver slide 3"></button>
+    <button class="turismo-nat-dot" aria-label="Ver slide 4"></button>
+    <button class="turismo-nat-dot" aria-label="Ver slide 5"></button>
+  </div>
+</section>
+
+
 
     <!-- Guías por la ciudad -->
   <section id="guias" class="turismo-guias">

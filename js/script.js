@@ -210,13 +210,68 @@ $(document).ready(function() {
 // });
 
 
-// seccion de naturaleza en Turimos para que al darle a los puntitos te lleve a la siguiente imagen
-   $(document).ready(function() {
-      $('.punto').click(function() {
-        var index = $(this).data('index');
-        $('.punto').removeClass('active');
-        $(this).addClass('active');
-        $('.slide').removeClass('active');
-        $('.slide').eq(index).addClass('active');
-      });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".turismo-nat-track");
+  const slides = Array.from(document.querySelectorAll(".turismo-nat-slide"));
+  const dots = Array.from(document.querySelectorAll(".turismo-nat-dot"));
+  const overlay = document.querySelector(".turismo-nat-overlay");
+
+  let current = 0;
+  const total = slides.length;
+  let autoplay = true;          // pon false si no quieres autoplay
+  const intervalMs = 5000;
+
+  function updateOverlay() {
+    const info = slides[current].getAttribute("data-info") || "";
+    overlay.textContent = info;
+  }
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle("active", i === current);
+      d.setAttribute("aria-selected", i === current ? "true" : "false");
     });
+    updateOverlay();
+  }
+
+  // Init
+  goTo(0);
+
+  // Dots click
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      autoplay = false; // pausa autoplay si el usuario interactúa
+      goTo(i);
+    });
+  });
+
+  // Autoplay
+  let timer = null;
+  function startAutoplay() {
+    if (autoplay) {
+      timer = setInterval(() => goTo(current + 1), intervalMs);
+    }
+  }
+  function stopAutoplay() {
+    if (timer) clearInterval(timer);
+  }
+  startAutoplay();
+
+  // Pausar en hover sobre el carrusel
+  const carousel = document.querySelector(".turismo-nat-carousel");
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", () => { if (autoplay) startAutoplay(); });
+
+  // Seguridad: si alguna imagen falla, que no rompa
+  slides.forEach(slide => {
+    const img = slide.querySelector("img");
+    img.addEventListener("error", () => {
+      overlay.textContent = "Imagen no disponible. Revisa la ruta.";
+      overlay.style.opacity = "1";
+    });
+  });
+});
+
