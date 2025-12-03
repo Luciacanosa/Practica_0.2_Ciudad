@@ -589,6 +589,67 @@ html, body {
   background-color: #ff0000;
 }
 
+
+/* Guías por la ciudad  */
+.turismo-guias {
+  padding: 80px 40px;
+  background-color: #fff;
+}
+.turismo-guias h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 36px;
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.guias-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.flecha {
+  font-size: 24px;
+  background-color: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.guia {
+  background-color: #fff3cd;
+  padding: 40px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Templos */
+.turismo-templos {
+  padding: 80px 40px;
+  background-color: #fff3e0;
+}
+.turismo-templos h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 36px;
+  color: #cc0000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.templos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.templo {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
 /* Rail Pass */
 .turismo-railpass {
   background-color: #ff0000;        /* rojo Kyoto */
