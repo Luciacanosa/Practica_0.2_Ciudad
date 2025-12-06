@@ -189,84 +189,114 @@ $(document).ready(function () {
 //   });
 
 // Modal Rail Pass
-$(".railpass .turismo-btn").click(function (e) {
-  e.preventDefault();
-  $("#modalWindow").addClass("show-modal");
-});
-
-$(".close").click(function () {
-  $("#modalWindow").removeClass("show-modal");
-});
-
-$(window).click(function (e) {
-  if ($(e.target).is("#modalWindow")) {
-    $("#modalWindow").removeClass("show-modal");
-  }
-});
+// $(".railpass .turismo-btn").click(function (e) {
+//   e.preventDefault();
+//   $("#modalWindow").addClass("show-modal");
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const track = document.querySelector(".turismo-nat-track");
-  const slides = Array.from(document.querySelectorAll(".turismo-nat-slide"));
-  const dots = Array.from(document.querySelectorAll(".turismo-nat-dot"));
-  const overlay = document.querySelector(".turismo-nat-overlay");
+// $(".close").click(function () {
+//   $("#modalWindow").removeClass("show-modal");
+// });
 
-  let current = 0;
-  const total = slides.length;
-  let autoplay = true; // pon false si no quieres autoplay
-  const intervalMs = 5000;
+// $(window).click(function (e) {
+//   if ($(e.target).is("#modalWindow")) {
+//     $("#modalWindow").removeClass("show-modal");
+//   }
+// });
+// // });
 
-  function updateOverlay() {
-    const info = slides[current].getAttribute("data-info") || "";
-    overlay.textContent = info;
-  }
+// document.addEventListener("DOMContentLoaded", function () {
+//   const track = document.querySelector(".turismo-nat-track");
+//   const slides = Array.from(document.querySelectorAll(".turismo-nat-slide"));
+//   const dots = Array.from(document.querySelectorAll(".turismo-nat-dot"));
+//   const overlay = document.querySelector(".turismo-nat-overlay");
 
-  function goTo(index) {
-    current = (index + total) % total;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => {
-      d.classList.toggle("active", i === current);
-      d.setAttribute("aria-selected", i === current ? "true" : "false");
-    });
-    updateOverlay();
-  }
+//   let current = 0;
+//   const total = slides.length;
+//   let autoplay = true; // pon false si no quieres autoplay
+//   const intervalMs = 5000;
 
-  // Init
-  goTo(0);
+//   function updateOverlay() {
+//     const info = slides[current].getAttribute("data-info") || "";
+//     overlay.textContent = info;
+//   }
 
-  // Dots click
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      autoplay = false; // pausa autoplay si el usuario interactúa
-      goTo(i);
-    });
+//   function goTo(index) {
+//     current = (index + total) % total;
+//     track.style.transform = `translateX(-${current * 100}%)`;
+//     dots.forEach((d, i) => {
+//       d.classList.toggle("active", i === current);
+//       d.setAttribute("aria-selected", i === current ? "true" : "false");
+//     });
+//     updateOverlay();
+//   }
+
+//   // Init
+//   goTo(0);
+
+//   // Dots click
+//   dots.forEach((dot, i) => {
+//     dot.addEventListener("click", () => {
+//       autoplay = false; // pausa autoplay si el usuario interactúa
+//       goTo(i);
+//     });
+//   });
+
+//   // Autoplay
+//   let timer = null;
+//   function startAutoplay() {
+//     if (autoplay) {
+//       timer = setInterval(() => goTo(current + 1), intervalMs);
+//     }
+//   }
+//   function stopAutoplay() {
+//     if (timer) clearInterval(timer);
+//   }
+//   startAutoplay();
+
+//   // Pausar en hover sobre el carrusel
+//   const carousel = document.querySelector(".turismo-nat-carousel");
+//   carousel.addEventListener("mouseenter", stopAutoplay);
+//   carousel.addEventListener("mouseleave", () => {
+//     if (autoplay) startAutoplay();
+//   });
+
+//   // Seguridad: si alguna imagen falla, que no rompa
+//   slides.forEach((slide) => {
+//     const img = slide.querySelector("img");
+//     img.addEventListener("error", () => {
+//       overlay.textContent = "Imagen no disponible. Revisa la ruta.";
+//       overlay.style.opacity = "1";
+//     });
+//   });
+// });
+
+// js para los acordeones de información
+$(document).ready(function () {
+  console.log("Online con jQuery");
+
+  //   convertiomos el titulo con draffable con jQueryUI
+  $("#title").draggable();
+
+  let $aBtns = $(".toggle");
+
+  $aBtns.on("click", function (e) {
+    e.preventDefault();
+    // cancela el efvento por defecto que tenga el elemento de html
+
+    let $this = $(this);
+    let $this_p = $this.next();
+    $this_p.slideToggle();
   });
 
-  // Autoplay
-  let timer = null;
-  function startAutoplay() {
-    if (autoplay) {
-      timer = setInterval(() => goTo(current + 1), intervalMs);
-    }
-  }
-  function stopAutoplay() {
-    if (timer) clearInterval(timer);
-  }
-  startAutoplay();
+  // show image on hover
 
-  // Pausar en hover sobre el carrusel
-  const carousel = document.querySelector(".turismo-nat-carousel");
-  carousel.addEventListener("mouseenter", stopAutoplay);
-  carousel.addEventListener("mouseleave", () => {
-    if (autoplay) startAutoplay();
-  });
+  let $imgHover = $(".img-hover");
 
-  // Seguridad: si alguna imagen falla, que no rompa
-  slides.forEach((slide) => {
-    const img = slide.querySelector("img");
-    img.addEventListener("error", () => {
-      overlay.textContent = "Imagen no disponible. Revisa la ruta.";
-      overlay.style.opacity = "1";
+  $imgHover
+    .on("mouseenter", function () {
+      $(this).next().stop(true, true).slideDown();
+    })
+    .on("mouseleave", function () {
+      $(this).next().stop(true, true).slideUp();
     });
-  });
-});
