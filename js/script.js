@@ -2,8 +2,8 @@
 
 $(document).mousemove(function (e) {
   $(".cursor").css({
-    left: e.clientX + "px",  // 👈 usa clientX/clientY
-    top: e.clientY + "px"
+    left: e.clientX + "px", // 👈 usa clientX/clientY
+    top: e.clientY + "px",
   });
 });
 
@@ -11,7 +11,7 @@ document.addEventListener("mousemove", (e) => {
   const el = document.querySelector(".cursor");
   if (!el) return;
   el.style.left = e.clientX + "px";
-  el.style.top  = e.clientY + "px";
+  el.style.top = e.clientY + "px";
 });
 
 // opcional: efecto al pasar por enlaces
@@ -23,7 +23,6 @@ $("a").hover(
     $(".cursor").removeClass("cursor-grow");
   }
 );
-
 
 // menu hambuerguesa para el navbar
 // lógica del menu (simplemente el clik en un icono)
@@ -39,7 +38,6 @@ burger.addEventListener("click", function () {
   burger.classList.toggle("fa-times");
   menu_opt.classList.toggle("menu-show");
 });
-
 
 // ventana modal ULTIMA OPORTUNIDAD JRPASS EN 10 SEGUNDOs
 
@@ -77,15 +75,13 @@ window.addEventListener("click", function (event) {
 // 👇 Abrir modal automáticamente a los 10 segundos
 setTimeout(openModalWindow, 10000);
 
-
-
 // carrusel fotos parte historia pag principal
 function iniciarCarrusel(selector) {
   const images = document.querySelectorAll(selector + " img");
   let index = 0;
 
   function showNextImage() {
-    images.forEach(img => img.classList.remove("active"));
+    images.forEach((img) => img.classList.remove("active"));
     images[index].classList.add("active");
     index = (index + 1) % images.length;
   }
@@ -98,59 +94,59 @@ function iniciarCarrusel(selector) {
 iniciarCarrusel(".carrusel.historia");
 iniciarCarrusel(".carrusel.cultura");
 
-
-
-
 // PÁGINA NEWSLETTER
 
 // Mostrar el día actual
-$(document).ready(function() {
-  const dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+$(document).ready(function () {
+  const dias = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
+  ];
   let hoy = new Date();
   $("#diaActual").text("Hoy es " + dias[hoy.getDay()]);
 
-  $(document).ready(function() {
-  const estados = [
-    "Despejado",
-    "Mayormente nublado",
-    "Parcialmente nublado",
-    "Lluvias ligeras",
-    "Tormentas aisladas"
-  ];
+  $(document).ready(function () {
+    const estados = [
+      "Despejado",
+      "Mayormente nublado",
+      "Parcialmente nublado",
+      "Lluvias ligeras",
+      "Tormentas aisladas",
+    ];
 
-  // Cambia el estado del tiempo cada 6 segundos en cada bloque
-  $(".dia").each(function(index, element) {
-    let estadoElem = $(element).find(".estado");
-    let i = 0;
-    setInterval(function() {
-      i = (i + 1) % estados.length;
-      estadoElem.fadeOut(300, function() {
-        $(this).text(estados[i]).fadeIn(300);
-      });
-    }, 6000 + index * 500); // escalonado para que no cambien todos a la vez
+    // Cambia el estado del tiempo cada 6 segundos en cada bloque
+    $(".dia").each(function (index, element) {
+      let estadoElem = $(element).find(".estado");
+      let i = 0;
+      setInterval(function () {
+        i = (i + 1) % estados.length;
+        estadoElem.fadeOut(300, function () {
+          $(this).text(estados[i]).fadeIn(300);
+        });
+      }, 6000 + index * 500); // escalonado para que no cambien todos a la vez
+    });
   });
-});
-
 
   // Efecto dinámico en el tráfico (cambia cada 7 segundos)
   const estadosTrafico = [
     "Tráfico fluido en la mayoría de avenidas",
     "Congestión en el centro histórico",
     "Retrasos en la línea de autobuses",
-    "Carreteras despejadas hacia los templos"
+    "Carreteras despejadas hacia los templos",
   ];
   let indexTrafico = 0;
-  setInterval(function() {
+  setInterval(function () {
     indexTrafico = (indexTrafico + 1) % estadosTrafico.length;
-    $("#traficoTexto").slideUp(500, function() {
+    $("#traficoTexto").slideUp(500, function () {
       $(this).text(estadosTrafico[indexTrafico]).slideDown(500);
     });
   }, 7000);
 });
-
-
-
-
 
 // js y jquery para turismo
 // $(document).ready(function() {
@@ -192,24 +188,22 @@ $(document).ready(function() {
 //     $(this).toggleClass("flipped");
 //   });
 
-  // Modal Rail Pass
-  $(".railpass .turismo-btn").click(function(e) {
-    e.preventDefault();
-    $("#modalWindow").addClass("show-modal");
-  });
+// Modal Rail Pass
+$(".railpass .turismo-btn").click(function (e) {
+  e.preventDefault();
+  $("#modalWindow").addClass("show-modal");
+});
 
-  $(".close").click(function() {
+$(".close").click(function () {
+  $("#modalWindow").removeClass("show-modal");
+});
+
+$(window).click(function (e) {
+  if ($(e.target).is("#modalWindow")) {
     $("#modalWindow").removeClass("show-modal");
-  });
-
-  $(window).click(function(e) {
-    if ($(e.target).is("#modalWindow")) {
-      $("#modalWindow").removeClass("show-modal");
-    }
-  });
+  }
+});
 // });
-
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector(".turismo-nat-track");
@@ -219,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let current = 0;
   const total = slides.length;
-  let autoplay = true;          // pon false si no quieres autoplay
+  let autoplay = true; // pon false si no quieres autoplay
   const intervalMs = 5000;
 
   function updateOverlay() {
@@ -263,10 +257,12 @@ document.addEventListener("DOMContentLoaded", function () {
   // Pausar en hover sobre el carrusel
   const carousel = document.querySelector(".turismo-nat-carousel");
   carousel.addEventListener("mouseenter", stopAutoplay);
-  carousel.addEventListener("mouseleave", () => { if (autoplay) startAutoplay(); });
+  carousel.addEventListener("mouseleave", () => {
+    if (autoplay) startAutoplay();
+  });
 
   // Seguridad: si alguna imagen falla, que no rompa
-  slides.forEach(slide => {
+  slides.forEach((slide) => {
     const img = slide.querySelector("img");
     img.addEventListener("error", () => {
       overlay.textContent = "Imagen no disponible. Revisa la ruta.";
@@ -274,4 +270,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-
