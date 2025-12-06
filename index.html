@@ -1,142 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Kyoto</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-</head>
-<body>
-
-  <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
     <div class="cursor"></div>
 
+    <!-- ventana modal que aparece a los diez segundo sobre el JR PASS -->
 
-<!-- ventana modal que aparece a los diez segundo sobre el JR PASS -->
+    <!-- Botón opcional para abrir manualmente -->
+    <button id="openModal" class="btn-modal">Abrir Modal</button>
 
-<!-- Botón opcional para abrir manualmente -->
-<button id="openModal" class="btn-modal">Abrir Modal</button>
-
-<!-- Ventana modal -->
-<div id="modalWindow" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>ULTIMA OPORTUNIDAD!</h2>
-    <p>
-      Si estás pensando en viajar a Kyoto, esta es tu oportunidad.<br>
-      Quedan las últimas diez plazas para viajar por todo Japón en tren con tu JR PASS.
-    </p>
-    <a href="turismo.html" target="_blank" class="btn-turismo">
-      Ir a la página de turismo
-    </a>
-  </div>
-</div>
-
-
-
-  <!-- Menú de navegación -->
-<header class="navbar">
-  <div class="logo">
-    <a href="index.html">Kyoto</a>
-  </div>
-
-  <!-- Icono hamburguesa -->
-  <div class="burger">
-    <i class="fas fa-bars"></i>
-  </div>
-
-  <!-- Menú de navegación -->
-  <nav class="nav-links menu">
-    <a href="turismo.html">Turismo</a>
-    <a href="informacion.html">Información</a>
-    <a href="newsletter.html">Newsletter</a>
-  </nav>
-</header>
-
-   <!-- Cabecera con imagen de fondo -->
-  <section class="hero">
-    <h1>Kyoto</h1>
-  </section>
-
-  <!-- sección resumen sobre kyoto -->
-  <section class="resumen">
-  <!-- Bloque 1: Historia (texto izquierda, imagen derecha) -->
-  <!-- Bloque 1: Historia -->
-<div class="bloque historia">
-  <div class="texto">
-    <h2>Kyoto</h2>
-    <p>Kyoto fue fundada en el año 794 como Heian-kyō, convirtiéndose en la capital imperial de Japón durante más de mil años. Durante este tiempo se consolidó como el centro político, religioso y cultural del país, albergando palacios, templos y festivales que marcaron profundamente la identidad japonesa. Hoy conserva gran parte de ese legado, con más de un millar de templos y santuarios, y una notable concentración de Patrimonios Nacionales y Sitios UNESCO.</p>
-    
-    <!-- Botón Ver más -->
-    <a href="informacion.html" class="btn-vermas">Ver más</a>
-  </div>
-  <div class="imagen">
-    <div class="carrusel historia">
-      <img src="assets/imágenes pag principal/cesped+esculturas.jpg" alt="Templo 6">
-      <img src="assets/imágenes pag principal/pexels-chloehuiss-1217579.jpg" alt="Templo 7">
-      <img src="assets/imágenes pag principal/pexels-mathew-liang-416678-3013995.jpg" alt="Templo 8">
-      <img src="assets/imágenes pag principal/pexels-pixabay-161251.jpg" alt="Templo 9">
-    </div> 
-  </div>
-</div>
-
-<!-- Bloque 2: Cultura -->
-<div class="bloque cultura">
-  <div class="imagen">
-    <div class="carrusel cultura">
-      <img src="assets/imágenes pag principal/templo.jpg" alt="Templo 1">
-      <img src="assets/imágenes pag principal/pexels-stephan-streuders-2134979-3767837.jpg" alt="Templo 2">
-      <img src="assets/imágenes pag principal/pexels-satoshi-1876568.jpg" alt="Templo 3">
-      <img src="assets/imágenes pag principal/pexels-satoshi-1413833.jpg" alt="Templo 4">
-    </div>    
-  </div>
-  <div class="texto">
-    <h2>Cultura</h2>
-    <p>La cultura de Kyoto es considerada el corazón artístico y espiritual de Japón. Aquí florecieron tradiciones como la ceremonia del té, el teatro Noh, los textiles Nishijin y el arte del kimono, además de festivales emblemáticos como el Gion Matsuri. Su vida cultural combina lo ancestral con lo contemporáneo: artesanos mantienen vivas técnicas centenarias mientras nuevas expresiones artísticas emergen, haciendo de Kyoto un lugar donde el pasado y el presente conviven en armonía.</p>
-    
-    <!-- Botón Ver más -->
-    <a href="informacion.html" class="btn-vermas">Ver más</a>
-  </div>
-</div>
-
-</section>
-
-<section class="turismo-collage">
-  <!-- Columna izquierda -->
-  <div class="columna izquierda">
-    <div class="alto">Naturaleza</div>
-    <div class="bajo">Estancia en templos</div>
-  </div>
-
-  <!-- Columna central -->
-  <div class="columna centro">
-    <a href="https://www.japan.travel/es/es/" target="_blank" class="grande enlace-turismo">
-      Descubre Kyoto
-    </a>
-    <div class="bloque-grid">
-      <div class="mini-bloque imagen-centro-izquierda"></div>
-      <div class="mini-bloque">Itinerarios</div>
-      <div class="mini-bloque">Experiencias</div>
-      <div class="mini-bloque">Rutas secretas</div>
+    <!-- Ventana modal -->
+    <div id="modalWindow" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>ULTIMA OPORTUNIDAD!</h2>
+        <p>
+          Si estás pensando en viajar a Kyoto, esta es tu oportunidad.<br />
+          Quedan las últimas diez plazas para viajar por todo Japón en tren con
+          tu JR PASS.
+        </p>
+        <a href="turismo.html" target="_blank" class="btn-turismo">
+          Ir a la página de turismo
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- Columna derecha -->
-  <div class="columna derecha">
-    <div class="completo imagen-derecha"></div>
-  </div>
-</section>
+    <!-- Menú de navegación -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="assets/iconos nav bar/logo dragon kyoto-02.png"
+            alt="Kyoto Logo"
+          />
+        </a>
+      </div>
+      <!-- Icono hamburguesa -->
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
 
+      <!-- Menú de navegación -->
+      <nav class="nav-links menu">
+        <a href="turismo.html">Turismo</a>
+        <a href="informacion.html">Información</a>
+        <a href="newsletter.html">Newsletter</a>
+      </nav>
+    </header>
 
+    <!-- Cabecera con imagen de fondo -->
+    <section class="hero">
+      <h1>Kyoto</h1>
+    </section>
 
-  <script src="js/script.js"></script>
-</body>
+    <!-- sección resumen sobre kyoto -->
+    <section class="resumen">
+      <!-- Bloque 1: Historia (texto izquierda, imagen derecha) -->
+      <!-- Bloque 1: Historia -->
+      <div class="bloque historia">
+        <div class="texto">
+          <h2>Kyoto</h2>
+          <p>
+            Kyoto fue fundada en el año 794 como Heian-kyō, convirtiéndose en la
+            capital imperial de Japón durante más de mil años. Durante este
+            tiempo se consolidó como el centro político, religioso y cultural
+            del país, albergando palacios, templos y festivales que marcaron
+            profundamente la identidad japonesa. Hoy conserva gran parte de ese
+            legado, con más de un millar de templos y santuarios, y una notable
+            concentración de Patrimonios Nacionales y Sitios UNESCO.
+          </p>
+
+          <!-- Botón Ver más -->
+          <a href="informacion.html" class="btn-vermas">Ver más</a>
+        </div>
+        <div class="imagen">
+          <div class="carrusel historia">
+            <img
+              src="assets/imágenes pag principal/cesped+esculturas.jpg"
+              alt="Templo 6"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-chloehuiss-1217579.jpg"
+              alt="Templo 7"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-mathew-liang-416678-3013995.jpg"
+              alt="Templo 8"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-pixabay-161251.jpg"
+              alt="Templo 9"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Bloque 2: Cultura -->
+      <div class="bloque cultura">
+        <div class="imagen">
+          <div class="carrusel cultura">
+            <img
+              src="assets/imágenes pag principal/templo.jpg"
+              alt="Templo 1"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-stephan-streuders-2134979-3767837.jpg"
+              alt="Templo 2"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-satoshi-1876568.jpg"
+              alt="Templo 3"
+            />
+            <img
+              src="assets/imágenes pag principal/pexels-satoshi-1413833.jpg"
+              alt="Templo 4"
+            />
+          </div>
+        </div>
+        <div class="texto">
+          <h2>Cultura</h2>
+          <p>
+            La cultura de Kyoto es considerada el corazón artístico y espiritual
+            de Japón. Aquí florecieron tradiciones como la ceremonia del té, el
+            teatro Noh, los textiles Nishijin y el arte del kimono, además de
+            festivales emblemáticos como el Gion Matsuri. Su vida cultural
+            combina lo ancestral con lo contemporáneo: artesanos mantienen vivas
+            técnicas centenarias mientras nuevas expresiones artísticas emergen,
+            haciendo de Kyoto un lugar donde el pasado y el presente conviven en
+            armonía.
+          </p>
+
+          <!-- Botón Ver más -->
+          <a href="informacion.html" class="btn-vermas">Ver más</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="turismo-collage">
+      <!-- Columna izquierda -->
+      <div class="columna izquierda">
+        <div class="alto">Naturaleza</div>
+        <div class="bajo">Estancia en templos</div>
+      </div>
+
+      <!-- Columna central -->
+      <div class="columna centro">
+        <a
+          href="https://www.japan.travel/es/es/"
+          target="_blank"
+          class="grande enlace-turismo"
+        >
+          Descubre Kyoto
+        </a>
+        <div class="bloque-grid">
+          <div class="mini-bloque imagen-centro-izquierda"></div>
+          <div class="mini-bloque">Itinerarios</div>
+          <div class="mini-bloque">Experiencias</div>
+          <div class="mini-bloque">Rutas secretas</div>
+        </div>
+      </div>
+
+      <!-- Columna derecha -->
+      <div class="columna derecha">
+        <div class="completo imagen-derecha"></div>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -1,165 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Kyoto</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-</head>
-<body>
-      <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
     <div class="cursor"></div>
 
+    <!-- Menú de navegación -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img
+            src="assets/iconos nav bar/logo dragon kyoto-01.png"
+            alt="Kyoto Logo"
+          />
+        </a>
+      </div>
+      <!-- Icono hamburguesa -->
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+
       <!-- Menú de navegación -->
-<header class="navbar">
-  <div class="logo">
-    <a href="index.html">Kyoto</a>
-  </div>
+      <nav class="nav-links menu">
+        <a href="turismo.html">Turismo</a>
+        <a href="informacion.html">Información</a>
+        <a href="newsletter.html">Newsletter</a>
+      </nav>
+    </header>
 
-  <!-- Icono hamburguesa -->
-  <div class="burger">
-    <i class="fas fa-bars"></i>
-  </div>
+    <!-- Cabecera -->
+    <section class="turismo-header">
+      <h1>Turismo en Kyoto</h1>
+    </section>
 
-  <!-- Menú de navegación -->
-  <nav class="nav-links menu">
-    <a href="turismo.html">Turismo</a>
-    <a href="informacion.html">Información</a>
-    <a href="newsletter.html">Newsletter</a>
-  </nav>
-</header>
-
-  <!-- Cabecera -->
-  <section class="turismo-header">
-    <h1>Turismo en Kyoto</h1>
-  </section>
-
-   <!-- Índice visual -->
-  <section class="turismo-indice">
-    <div class="indice-item" onclick="location.href='#naturaleza'">
-      <img src="assets/imagenes turismo/naturaleza.jpg" alt="Naturaleza">
-      <h3>Naturaleza</h3>
-      <button>Ver sección</button>
-    </div>
-    <div class="indice-item" onclick="location.href='#guias'">
-      <img src="assets/imagenes turismo/guias.jpg" alt="Guías">
-      <h3>Guías</h3>
-      <button>Ver sección</button>
-    </div>
-    <div class="indice-item" onclick="location.href='#templos'">
-      <img src="assets/imagenes turismo/templos.jpg" alt="Templos">
-      <h3>Templos</h3>
-      <button>Ver sección</button>
-    </div>
-    <div class="indice-item" onclick="location.href='#itinerarios'">
-      <img src="assets/imagenes turismo/itinerarios.jpg" alt="Itinerarios">
-      <h3>Itinerarios</h3>
-      <button>Ver sección</button>
-    </div>
-    <div class="indice-item" onclick="location.href='#railpass'">
-      <img src="assets/imagenes turismo/railpass.png" alt="Rail Pass">
-      <h3>Rail Pass</h3>
-      <button>Ver sección</button>
-    </div>
-  </section>
-
-  <!-- naturaleza -->
-
-<section class="turismo-naturaleza" id="naturaleza">
-  <h2>Naturaleza</h2>
-
-  <div class="turismo-nat-carousel" aria-label="Carrusel de parques y bosques de Kyoto">
-    <div class="turismo-nat-track">
-      <div class="turismo-nat-slide" data-info="Arashiyama: bosque de bambú y río Katsura.">
-        <img src="assets/imagenes turismo/naturaleza.jpg" alt="Arashiyama, bosque de bambú">
+    <!-- Índice visual -->
+    <section class="turismo-indice">
+      <div class="indice-item" onclick="location.href='#naturaleza'">
+        <img src="assets/imagenes turismo/naturaleza.jpg" alt="Naturaleza" />
+        <h3>Naturaleza</h3>
+        <button>Ver sección</button>
       </div>
-      <div class="turismo-nat-slide" data-info="Jardín Imperial: paseos históricos y naturaleza cuidada.">
-        <img src="assets/imagenes turismo/jardinimperial.png" alt="Jardín Imperial de Kyoto">
+      <div class="indice-item" onclick="location.href='#guias'">
+        <img src="assets/imagenes turismo/guias.jpg" alt="Guías" />
+        <h3>Guías</h3>
+        <button>Ver sección</button>
       </div>
-      <div class="turismo-nat-slide" data-info="Parque Maruyama: cerezos y templo Yasaka cerca.">
-        <img src="assets/imagenes turismo/parquemarayuma.jpg" alt="Parque Maruyama">
+      <div class="indice-item" onclick="location.href='#templos'">
+        <img src="assets/imagenes turismo/templos.jpg" alt="Templos" />
+        <h3>Templos</h3>
+        <button>Ver sección</button>
       </div>
-      <div class="turismo-nat-slide" data-info="Kyoto Gyoen: praderas amplias y senderos tranquilos.">
-        <img src="assets/imagenes turismo/gyoen.jpg" alt="Kyoto Gyoen National Garden">
+      <div class="indice-item" onclick="location.href='#itinerarios'">
+        <img src="assets/imagenes turismo/itinerarios.jpg" alt="Itinerarios" />
+        <h3>Itinerarios</h3>
+        <button>Ver sección</button>
       </div>
-      <div class="turismo-nat-slide" data-info="Río Kamo: ciclovías y vida local junto al agua.">
-        <img src="assets/imagenes turismo/umekojipark20191.jpg" alt="Río Kamo en Kyoto">
+      <div class="indice-item" onclick="location.href='#railpass'">
+        <img src="assets/imagenes turismo/railpass.png" alt="Rail Pass" />
+        <h3>Rail Pass</h3>
+        <button>Ver sección</button>
       </div>
-    </div>
+    </section>
 
-    <!-- Overlay informativo -->
-    <div class="turismo-nat-overlay" aria-hidden="true"></div>
-  </div>
+    <!-- naturaleza -->
 
-  <!-- Puntos -->
-  <div class="turismo-nat-dots" role="tablist" aria-label="Navegación del carrusel">
-    <button class="turismo-nat-dot active" aria-label="Ver slide 1" aria-selected="true"></button>
-    <button class="turismo-nat-dot" aria-label="Ver slide 2"></button>
-    <button class="turismo-nat-dot" aria-label="Ver slide 3"></button>
-    <button class="turismo-nat-dot" aria-label="Ver slide 4"></button>
-    <button class="turismo-nat-dot" aria-label="Ver slide 5"></button>
-  </div>
-</section>
+    <section class="turismo-naturaleza" id="naturaleza">
+      <h2>Naturaleza</h2>
 
+      <div
+        class="turismo-nat-carousel"
+        aria-label="Carrusel de parques y bosques de Kyoto"
+      >
+        <div class="turismo-nat-track">
+          <div
+            class="turismo-nat-slide"
+            data-info="Arashiyama: bosque de bambú y río Katsura."
+          >
+            <img
+              src="assets/imagenes turismo/naturaleza.jpg"
+              alt="Arashiyama, bosque de bambú"
+            />
+          </div>
+          <div
+            class="turismo-nat-slide"
+            data-info="Jardín Imperial: paseos históricos y naturaleza cuidada."
+          >
+            <img
+              src="assets/imagenes turismo/jardinimperial.png"
+              alt="Jardín Imperial de Kyoto"
+            />
+          </div>
+          <div
+            class="turismo-nat-slide"
+            data-info="Parque Maruyama: cerezos y templo Yasaka cerca."
+          >
+            <img
+              src="assets/imagenes turismo/parquemarayuma.jpg"
+              alt="Parque Maruyama"
+            />
+          </div>
+          <div
+            class="turismo-nat-slide"
+            data-info="Kyoto Gyoen: praderas amplias y senderos tranquilos."
+          >
+            <img
+              src="assets/imagenes turismo/gyoen.jpg"
+              alt="Kyoto Gyoen National Garden"
+            />
+          </div>
+          <div
+            class="turismo-nat-slide"
+            data-info="Río Kamo: ciclovías y vida local junto al agua."
+          >
+            <img
+              src="assets/imagenes turismo/umekojipark20191.jpg"
+              alt="Río Kamo en Kyoto"
+            />
+          </div>
+        </div>
 
+        <!-- Overlay informativo -->
+        <div class="turismo-nat-overlay" aria-hidden="true"></div>
+      </div>
+
+      <!-- Puntos -->
+      <div
+        class="turismo-nat-dots"
+        role="tablist"
+        aria-label="Navegación del carrusel"
+      >
+        <button
+          class="turismo-nat-dot active"
+          aria-label="Ver slide 1"
+          aria-selected="true"
+        ></button>
+        <button class="turismo-nat-dot" aria-label="Ver slide 2"></button>
+        <button class="turismo-nat-dot" aria-label="Ver slide 3"></button>
+        <button class="turismo-nat-dot" aria-label="Ver slide 4"></button>
+        <button class="turismo-nat-dot" aria-label="Ver slide 5"></button>
+      </div>
+    </section>
 
     <!-- Guías por la ciudad -->
-  <section id="guias" class="turismo-guias">
-    <h2>Guías por la ciudad</h2>
-    <div class="guias-carousel">
-      <button class="flecha izquierda">←</button>
-      <div class="guia">Guía 1</div>
-      <div class="guia">Guía 2</div>
-      <div class="guia">Guía 3</div>
-      <div class="guia">Guía 4</div>
-      <button class="flecha derecha">→</button>
-    </div>
-  </section>
+    <section id="guias" class="turismo-guias">
+      <h2>Guías por la ciudad</h2>
+      <div class="guias-carousel">
+        <button class="flecha izquierda">←</button>
+        <div class="guia">Guía 1</div>
+        <div class="guia">Guía 2</div>
+        <div class="guia">Guía 3</div>
+        <div class="guia">Guía 4</div>
+        <button class="flecha derecha">→</button>
+      </div>
+    </section>
 
     <!--  Estancia en Templos -->
-  <section id="templos" class="turismo-templos">
-    <h2>Estancia en templos</h2>
-    <div class="templos-grid">
-      <div class="templo">Templo 1</div>
-      <div class="templo">Templo 2</div>
-      <div class="templo">Templo 3</div>
-    </div>
-  </section>
+    <section id="templos" class="turismo-templos">
+      <h2>Estancia en templos</h2>
+      <div class="templos-grid">
+        <div class="templo">Templo 1</div>
+        <div class="templo">Templo 2</div>
+        <div class="templo">Templo 3</div>
+      </div>
+    </section>
 
     <!-- Itinerarios -->
-  <section id="itinerarios" class="turismo-itinerarios">
-    <h2>Itinerarios</h2>
-    <p>Explora Kyoto en 1, 2 o 3 días con rutas recomendadas.</p>
-    <button id="abrir-modal">Crea tu propio itinerario</button>
-  </section>
+    <section id="itinerarios" class="turismo-itinerarios">
+      <h2>Itinerarios</h2>
+      <p>Explora Kyoto en 1, 2 o 3 días con rutas recomendadas.</p>
+      <button id="abrir-modal">Crea tu propio itinerario</button>
+    </section>
 
+    <!-- Rail Pass -->
+    <section class="turismo-railpass">
+      <div class="texto">
+        <h2>Japan Rail Pass</h2>
+        <p>
+          Viaja por todo Japón con un solo pase. Ideal para moverte entre Kyoto,
+          Osaka y Nara.
+        </p>
+        <a
+          href="https://www.japan.travel/es/plan/japan-rail-pass/"
+          target="_blank"
+          class="btn-parpadeo"
+          >Comprar Rail Pass</a
+        >
+      </div>
+      <div class="imagen">
+        <img src="img/jrpass.jpg" alt="Rail Pass" />
+      </div>
+    </section>
 
-  <!-- Rail Pass -->
-  <section class="turismo-railpass">
-    <div class="texto">
-      <h2>Japan Rail Pass</h2>
-      <p>Viaja por todo Japón con un solo pase. Ideal para moverte entre Kyoto, Osaka y Nara.</p>
-      <a href="https://www.japan.travel/es/plan/japan-rail-pass/" target="_blank" class="btn-parpadeo">Comprar Rail Pass</a>
-    </div>
-    <div class="imagen">
-      <img src="img/jrpass.jpg" alt="Rail Pass">
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
+    </footer>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
-  </footer>
-
-
-<script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>
