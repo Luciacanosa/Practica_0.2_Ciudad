@@ -1,109 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Newsletter</title>
-   <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Newsletter</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-</head>
-<body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
     <div class="cursor"></div>
 
+    <!-- Menú de navegación -->
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">Kyoto</a>
+      </div>
+      <nav class="nav-links">
+        <a href="turismo.html">Turismo</a>
+        <a href="informacion.html">Información</a>
+        <a href="newsletter.html">Newsletter</a>
+      </nav>
+    </header>
 
-  <!-- Menú de navegación -->
-  <header class="navbar">
-    <div class="logo">
-      <a href="index.html">Kyoto</a>
-    </div>
-    <nav class="nav-links">
-      <a href="turismo.html">Turismo</a>
-      <a href="informacion.html">Información</a>
-      <a href="newsletter.html">Newsletter</a>
-    </nav>
-  </header>
+    <!-- Cabecera con imagen de fondo -->
+    <section class="hero">
+      <h1>Newsletter</h1>
+    </section>
+    <!-- Día de la semana -->
+    <section class="dia-semana">
+      <h2 id="diaActual"></h2>
+    </section>
 
-   <!-- Cabecera con imagen de fondo -->
-  <section class="hero">
-    <h1>Newsletter</h1>
-  </section>
-  <!-- Día de la semana -->
-  <section class="dia-semana">
-    <h2 id="diaActual"></h2>
-  </section>
+    <!-- Tiempo semanal (pantalla completa, sin caja) -->
+    <section class="tiempo-semana">
+      <h2>Pronóstico semanal para Kyoto</h2>
+      <div class="forecast-grid">
+        <div class="dia">
+          <h3>Domingo</h3>
+          <p class="estado">Despejado</p>
+          <p class="precipitacion">18–24h: 10%</p>
+        </div>
+        <div class="dia">
+          <h3>Lunes</h3>
+          <p class="estado">Mayormente nublado</p>
+          <p class="temperatura">Máx: 19°C / Mín: 8°C</p>
+          <p class="precipitacion">12–18h: 20%</p>
+        </div>
+        <div class="dia">
+          <h3>Martes</h3>
+          <p class="estado">Parcialmente nublado</p>
+          <p class="precipitacion">Sin datos</p>
+        </div>
+      </div>
+    </section>
 
-<!-- Tiempo semanal (pantalla completa, sin caja) -->
-<section class="tiempo-semana">
-  <h2>Pronóstico semanal para Kyoto</h2>
-  <div class="forecast-grid">
-    <div class="dia">
-      <h3>Domingo</h3>
-      <p class="estado">Despejado</p>
-      <p class="precipitacion">18–24h: 10%</p>
-    </div>
-    <div class="dia">
-      <h3>Lunes</h3>
-      <p class="estado">Mayormente nublado</p>
-      <p class="temperatura">Máx: 19°C / Mín: 8°C</p>
-      <p class="precipitacion">12–18h: 20%</p>
-    </div>
-    <div class="dia">
-      <h3>Martes</h3>
-      <p class="estado">Parcialmente nublado</p>
-      <p class="precipitacion">Sin datos</p>
-    </div>
-  </div>
-</section>
+    <!-- Noticias recientes (estilo premium) -->
+    <section class="noticias-full">
+      <h2>Actualidad en Kyoto</h2>
+      <div class="noticias-grid">
+        <article class="noticia-caja">
+          <img
+            src="assets/imagenes noticias/Captura de pantalla 2025-12-06 a las 20.14.48.png"
+            alt="Hojas de otoño en Kyoto"
+          />
+          <h3>Calendario de hojas de otoño actualizado</h3>
+          <p>Descubre los mejores lugares para ver el momiji este noviembre.</p>
+          <a
+            href="https://kyoto.travel/es/news/"
+            target="_blank"
+            class="btn-noticia"
+            >Saber más</a
+          >
+        </article>
+        <article class="noticia-caja">
+          <img
+            src="assets/imagenes noticias/Captura de pantalla 2025-12-06 a las 20.16.15.png"
+            alt="Templos en invierno"
+          />
+          <h3>Aperturas especiales de invierno</h3>
+          <p>60ª edición con acceso exclusivo a templos históricos.</p>
+          <a
+            href="https://kyoto.travel/es/news/"
+            target="_blank"
+            class="btn-noticia"
+            >Saber más</a
+          >
+        </article>
+        <article class="noticia-caja">
+          <img
+            src="assets/imagenes noticias/noticia 4.jpg"
+            alt="Festival de fotografía Kyotographie"
+          />
+          <h3>Kyotographie: arte y reflexión</h3>
+          <p>El festival reúne obras de Martin Parr y Graciela Iturbide.</p>
+          <a
+            href="https://elpais.com/noticias/kioto/"
+            target="_blank"
+            class="btn-noticia"
+            >Saber más</a
+          >
+        </article>
+        <article class="noticia-caja">
+          <img
+            src="assets/imagenes noticias/Captura de pantalla 2025-12-06 a las 20.19.06.png"
+            alt="Accidente en Kyoto"
+          />
+          <h3>Accidente múltiple en Kyoto</h3>
+          <p>Un atropello deja un muerto y diez heridos en el centro.</p>
+          <a
+            href="https://noticiasnippon.jp/2025/11/"
+            target="_blank"
+            class="btn-noticia"
+            >Saber más</a
+          >
+        </article>
+      </div>
+    </section>
 
+    <!-- Tráfico -->
+    <section class="trafico">
+      <h2>Estado del tráfico en Kyoto</h2>
+      <p id="traficoTexto">Tráfico fluido en la mayoría de avenidas</p>
+    </section>
 
-<!-- Noticias recientes (estilo premium) -->
-<section class="noticias-full">
-  <h2>Actualidad en Kyoto</h2>
-  <div class="noticias-grid">
-    <article class="noticia-caja">
-      <img src="https://kyoto.travel/assets/img/news/autumn-leaves.jpg" alt="Hojas de otoño en Kyoto">
-      <h3>Calendario de hojas de otoño actualizado</h3>
-      <p>Descubre los mejores lugares para ver el momiji este noviembre.</p>
-      <a href="https://kyoto.travel/es/news/" target="_blank" class="btn-noticia">Saber más</a>
-    </article>
-    <article class="noticia-caja">
-      <img src="https://kyoto.travel/assets/img/news/winter-openings.jpg" alt="Templos en invierno">
-      <h3>Aperturas especiales de invierno</h3>
-      <p>60ª edición con acceso exclusivo a templos históricos.</p>
-      <a href="https://kyoto.travel/es/news/" target="_blank" class="btn-noticia">Saber más</a>
-    </article>
-    <article class="noticia-caja">
-      <img src="https://elpais.com/resizer/news-kyoto.jpg" alt="Festival de fotografía Kyotographie">
-      <h3>Kyotographie: arte y reflexión</h3>
-      <p>El festival reúne obras de Martin Parr y Graciela Iturbide.</p>
-      <a href="https://elpais.com/noticias/kioto/" target="_blank" class="btn-noticia">Saber más</a>
-    </article>
-    <article class="noticia-caja">
-      <img src="https://noticiasnippon.jp/wp-content/uploads/2025/11/accidente-kyoto.jpg" alt="Accidente en Kyoto">
-      <h3>Accidente múltiple en Kyoto</h3>
-      <p>Un atropello deja un muerto y diez heridos en el centro.</p>
-      <a href="https://noticiasnippon.jp/2025/11/" target="_blank" class="btn-noticia">Saber más</a>
-    </article>
-  </div>
-</section>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
+    </footer>
 
-
-  <!-- Tráfico -->
-  <section class="trafico">
-    <h2>Estado del tráfico en Kyoto</h2>
-    <p id="traficoTexto">Tráfico fluido en la mayoría de avenidas</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
-  </footer>
-
-  <script src="js/script.js"></script>
-</body>
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -70,13 +70,14 @@ body {
 }
 
 .logo img {
-  height: 50px; /* Ajusta según el tamaño que quieras */
-  width: auto; /* Mantiene la proporción */
+  height: 60px;
+  width: auto;
   transition: opacity 0.3s ease;
 }
 
 .logo img:hover {
-  opacity: 0.8; /* Efecto hover sutil */
+  opacity: 0.8;
+  transform: scale(1.2);
 }
 .nav-links a {
   margin-left: 20px;
