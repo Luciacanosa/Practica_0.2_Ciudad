@@ -16,7 +16,14 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    
   </head>
   <body>
     <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
@@ -48,61 +55,44 @@
 
     <!-- Cabecera con imagen de fondo -->
     <section class="hero">
-      <h1>Información</h1>
+      <h1 id="title">Información</h1>
     </section>
 
-    <!-- acordeones para saber información básica sobre kyoto -->
-    <ul class="accordion">
-      <li>
-        <a class="toggle" href="#">Item 1</a>
+   <ul class="accordion">
+    <li>
+        <a class="toggle" href="#">Esenciales Culinarios (Comida)</a>
         <p class="inner">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis,
-          incidunt vitae. Debitis nihil corrupti fugit quae optio animi. Alias
-          libero numquam deleniti incidunt autem veniam corrupti atque? Qui,
-          corrupti quam.
+            **Obligatorio probar:** **Yudofu** (tofu cocido), un plato icónico de los templos zen. El **matcha** (té verde en polvo) y los dulces **wagashi** son imprescindibles. Kioto es famosa por su cocina *kaiseki* (alta cocina estacional) y los puestos de comida en el mercado de Nishiki. La comida de los monjes (*shojin ryori*) también es muy popular.
         </p>
-      </li>
+    </li>
 
-      <li>
-        <a class="toggle" href="#">Item 2</a>
+    <li>
+        <a class="toggle" href="#">Consejos y Preparación (Recomendaciones de Viaje)</a>
         <p class="inner">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit culpa
-          voluptatum minus nesciunt excepturi pariatur deserunt! Explicabo
-          tempore eius hic architecto tempora ad, minus possimus ut? Eaque
-          aspernatur blanditiis consectetur.
+            **Mejor época:** Primavera (sakura) y otoño (momiji) son las estaciones más bellas, pero también las más concurridas. El verano es caluroso y húmedo.
+            **Transporte:** Utiliza el autobús para llegar a la mayoría de los templos y puntos turísticos, ya que el metro tiene menos cobertura. Compra la tarjeta **ICOCA** o usa un pase diario de autobús para ahorrar tiempo y dinero.
+            **Idioma:** Aprender frases básicas en japonés (*arigato*, *sumimasen*) es muy apreciado.
         </p>
-      </li>
+    </li>
 
-      <li>
-        <a class="toggle" href="#">Item 3</a>
+    <li>
+        <a class="toggle" href="#">Etiqueta y Normas (Obligaciones)</a>
         <p class="inner">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius est
-          enim explicabo aperiam, autem quas inventore adipisci. Quos est quidem
-          at ipsum, dicta maiores? Quia ratione assumenda adipisci placeat at!
+            **Normas en templos:** Quítate los zapatos antes de entrar a las salas y jardines interiores. No tomes fotos donde haya carteles que lo prohíban. Mantén siempre un tono de voz bajo.
+            **En la calle:** Es de mala educación comer o beber mientras caminas, excepto en zonas específicas como festivales. Separa la basura adecuadamente. No dejes propina.
         </p>
-      </li>
+    </li>
 
-      <li>
-        <a class="toggle" href="#">Item 4</a>
+    <li>
+        <a class="toggle" href="#">Moneda y Presupuesto (La "una más" sugerida)</a>
         <p class="inner">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          voluptates nobis totam, nemo voluptate recusandae repellendus
-          voluptatum odit porro officia. Officia alias autem minus ducimus,
-          minima blanditiis dignissimos vero accusantium?
+            **Moneda:** La moneda oficial es el Yen Japonés (JPY). Aunque Japón es un país moderno, muchos establecimientos pequeños (especialmente fuera de las grandes estaciones) solo aceptan **efectivo**.
+            **Presupuesto diario (estimado):** Los costes varían, pero un presupuesto moderado puede rondar los ¥10,000 - ¥15,000 por persona por día (excluyendo alojamiento, pero incluyendo comida, transporte y entradas a templos).
+            **Impuestos:** El impuesto al consumo es del 10%.
         </p>
-      </li>
-
-      <li>
-        <a class="toggle" href="#">Item 5</a>
-        <p class="inner">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          voluptates nobis totam, nemo voluptate recusandae repellendus
-          voluptatum odit porro officia. Officia alias autem minus ducimus,
-          minima blanditiis dignissimos vero accusantium?
-        </p>
-      </li>
-    </ul>
-
+    </li>
+</ul>
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

@@ -16,7 +16,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- jQuery y jQuery UI (CDN: asegúrate de que jQuery esté antes que jQuery UI) -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   </head>
   <body>
     <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
@@ -181,12 +184,57 @@
       </div>
     </section>
 
-    <!-- Itinerarios -->
-    <section id="itinerarios" class="turismo-itinerarios">
-      <h2>Itinerarios</h2>
-      <p>Explora Kyoto en 1, 2 o 3 días con rutas recomendadas.</p>
-      <button id="abrir-modal">Crea tu propio itinerario</button>
-    </section>
+    <!-- itinerarios -->
+
+    <!-- Botón que abre modal -->
+<section id="itinerarios" class="turismo-itinerarios">
+  <h2>Itinerarios</h2>
+  <p>Explora Kyoto en 1, 2 o 3 días con rutas recomendadas.</p>
+  <button id="abrir-modal-itinerario">Crea tu propio itinerario</button>
+</section>
+
+<!-- Modal para crear itinerario -->
+<div id="modalItinerario" class="modal-itinerario" aria-hidden="true" role="dialog">
+  <div class="modal-content-itinerario" role="document">
+    <button class="close close-crear" aria-label="Cerrar">&times;</button>
+    <h2>Crea tu itinerario</h2>
+    <p>Ordena las actividades según tus preferencias:</p>
+
+    <ul id="sortable" class="sortable-list">
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Kinkaku-ji</li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Paseo por el distrito de Gion</li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Bosque de Bambú de Arashiyama</li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Fushimi Inari Taisha</li>
+      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Mercado de Nishiki</li>
+    </ul>
+
+    <button id="guardar-itinerario" class="btn-guardar">Guardar itinerario</button>
+  </div>
+</div>
+
+<!-- Modal final de confirmación -->
+<div id="modalGracias" class="modal-itinerario" aria-hidden="true" role="dialog">
+  <div class="modal-content-itinerario" role="document">
+    <button class="close close-gracias" aria-label="Cerrar">&times;</button>
+    <h2>¡Gracias por subir tu itinerario!</h2>
+    <p>¡Lo tendremos en cuenta!</p>
+  </div>
+</div>
+
+<!-- Modal final de confirmación -->
+<div id="modalGracias" class="modal-itinerario">
+  <div class="modal-content-itinerario">
+    <span class="close close-gracias">&times;</span>
+    <h2>¡Gracias por subir tu itinerario!</h2>
+    <p>¡Lo tendremos en cuenta!</p>
+  </div>
+</div>
+
+
+
+
+
+
 
     <!-- Rail Pass -->
     <section class="turismo-railpass">
@@ -213,6 +261,7 @@
       <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
     </footer>
 
+    <script src="js/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

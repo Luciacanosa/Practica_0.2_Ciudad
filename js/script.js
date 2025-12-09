@@ -72,7 +72,7 @@ window.addEventListener("click", function (event) {
   }
 });
 
-// 👇 Abrir modal automáticamente a los 10 segundos
+// Abrir modal automáticamente a los 10 segundos
 setTimeout(openModalWindow, 10000);
 
 // carrusel fotos parte historia pag principal
@@ -271,32 +271,53 @@ $(document).ready(function () {
 //   });
 // });
 
-// js para los acordeones de información
+
+
 $(document).ready(function () {
-  console.log("Online con jQuery");
+  // Inicializa sortable
+  if ($("#sortable").length) {
+    $("#sortable").sortable();
+    $("#sortable").disableSelection();
+  }
 
-  //   convertiomos el titulo con draffable con jQueryUI
-  $("#title").draggable();
-
-  let $aBtns = $(".toggle");
-
-  $aBtns.on("click", function (e) {
-    e.preventDefault();
-    // cancela el efvento por defecto que tenga el elemento de html
-
-    let $this = $(this);
-    let $this_p = $this.next();
-    $this_p.slideToggle();
+  // Abrir modal (selector actualizado)
+  $("#abrir-modal-itinerario").on("click", function () {
+    $("#modalItinerario").fadeIn(150).attr("aria-hidden", "false");
   });
 
-  // show image on hover
+  // Cerrar modal crear (botón X)
+  $(".close-crear").on("click", function () {
+    $("#modalItinerario").fadeOut(120).attr("aria-hidden", "true");
+  });
 
-  let $imgHover = $(".img-hover");
+  // Guardar -> cerrar crear y abrir gracias
+  $("#guardar-itinerario").on("click", function () {
+    // opcional: leer el orden actual
+    const orden = $("#sortable li").map(function () { return $(this).text().trim(); }).get();
+    console.log("Itinerario guardado (orden):", orden); // para debug / puedes guardar en localStorage o enviar a servidor
 
-  $imgHover
-    .on("mouseenter", function () {
-      $(this).next().stop(true, true).slideDown();
-    })
-    .on("mouseleave", function () {
-      $(this).next().stop(true, true).slideUp();
+    // animación de cierre y apertura
+    $("#modalItinerario").fadeOut(120, function () {
+      $("#modalGracias").fadeIn(200).attr("aria-hidden", "false");
     });
+  });
+
+  // Cerrar modal gracias
+  $(".close-gracias").on("click", function () {
+    $("#modalGracias").fadeOut(120).attr("aria-hidden", "true");
+  });
+
+  // Cerrar al clicar fuera del contenido
+  $(document).on("click", ".modal-itinerario", function (e) {
+    if (e.target === this) {
+      $(this).fadeOut(120).attr("aria-hidden", "true");
+    }
+  });
+
+  // tecla Esc para cerrar ambos
+  $(document).on("keydown", function (e) {
+    if (e.key === "Escape") {
+      $(".modal-itinerario:visible").fadeOut(120).attr("aria-hidden", "true");
+    }
+  });
+});
