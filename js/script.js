@@ -280,121 +280,94 @@ $(document).ready(function () {
 
 
 
-  // naturaleza pasar imágenes
-  /**
- * Funciones en el script slideShow.js
- * 
- * Este slideshow tendrá unos controladores (flechas) para pasar hacia delante y hacia atrás los slides.
- * 
- * También tendrá unos puntos para poder seleccionar y ver cada uno de los slides
- * 
- * También será automatico y podremos ir viendo cada slide pasado un cierto tiempo
- */
+ // slideShow.js — versión funcional basada en tu ejemplo
 
-// Inicializamos el contador que vamos a usar nosotros en el código internamente
 let slideIndex = 1;
 let autoSlide;
-let arrDots = document.querySelectorAll(".dot");
+let arrDots;
 
-showSlide(slideIndex);
+function initSlideshow() {
+  // Asegura que el DOM está listo y las dots existen
+  arrDots = document.querySelectorAll(".turismo-slideshow-dots .dot");
+  showSlide(slideIndex);
+  startAutoSlide();
 
-// llamamos a esta función en el momento de la carga de la web
-startAutoSlide();
-
-
-// Creamos un bucle para asociar a cada punto un evento click y que se llame a currentDotSlide()
-for (let k = 0; k < arrDots.length; k++) {
-    arrDots[k].addEventListener("click", function() {        
-        stopAutoSlide();
-        currentDotSlide(k);
-        startAutoSlide();
+  // Eventos de dots
+  for (let k = 0; k < arrDots.length; k++) {
+    arrDots[k].addEventListener("click", function () {
+      stopAutoSlide();
+      currentDotSlide(k);
+      startAutoSlide();
     });
-}
+  }
 
+  // Flechas
+  const nextSlideArrow = document.querySelector(".turismo-slideshow-container .next");
+  const prevSlideArrow = document.querySelector(".turismo-slideshow-container .prev");
 
-// Seleccionamos las flechas de next y prev slide
-let nextSlideArrow = document.querySelector(".next");
-let prevSlideArrow = document.querySelector(".prev");
-
-nextSlideArrow.addEventListener("click", function(){
+  nextSlideArrow.addEventListener("click", function () {
     stopAutoSlide();
     nextPrevSlide(1);
     startAutoSlide();
-});
+  });
 
-prevSlideArrow.addEventListener("click", function(){
+  prevSlideArrow.addEventListener("click", function () {
     stopAutoSlide();
     nextPrevSlide(-1);
     startAutoSlide();
-});
+  });
 
-// Eventos click en puntos
+  // Pausar autoplay en hover del contenedor
+  const container = document.querySelector(".turismo-slideshow-container");
+  container.addEventListener("mouseenter", stopAutoSlide);
+  container.addEventListener("mouseleave", startAutoSlide);
+}
 
-
-/**
- * 
- * @param {number} index 
- * 
- * Esta función aumenta o disminuya el slideIndex dependiendo del parámetro que le llegue desde la llamada
- */
 function nextPrevSlide(index) {
-    slideIndex = slideIndex + index;
-    // slideIndex += index; 
-    showSlide(slideIndex);
+  slideIndex = slideIndex + index;
+  showSlide(slideIndex);
 }
 
-/**
- * 
- * Esta función actualiza la variable slideIndex igualando su valor al indice del punto (dot) que le llegará como parámetro
- * 
- * @param {number} dotIndex 
- */
 function currentDotSlide(dotIndex) {
-    slideIndex = dotIndex + 1;
-    showSlide(slideIndex);
+  slideIndex = dotIndex + 1;
+  showSlide(slideIndex);
 }
 
-/**
- * 
- * @param {number} slideNumber
- * 
- * Esta funcion mostrará el slide correspondiente a la posición que le llegue
- * 
- * Tambien tendrá que calcular si nos pasamos por arriba o por abajo el indice 
- */
 function showSlide(slideNumber) {
-    let arrSlides = document.querySelectorAll(".mySlides");
+  const arrSlides = document.querySelectorAll(".turismo-slideshow-container .mySlides");
 
-    // Si nos pasamos de ir para alante
-    if (slideNumber > arrSlides.length) {
-        slideIndex = 1;
-    }
+  if (arrSlides.length === 0) return;
 
-    // Si nos pasamos para atrás
-    if (slideNumber < 1) {
-        slideIndex = arrSlides.length;
+  if (slideNumber > arrSlides.length) {
+    slideIndex = 1;
+  }
+  if (slideNumber < 1) {
+    slideIndex = arrSlides.length;
+  }
+
+  // Oculta todos y desactiva puntos
+  for (let i = 0; i < arrSlides.length; i++) {
+    arrSlides[i].style.display = "none";
+    if (arrDots[i]) {
+      arrDots[i].classList.remove("active");
     }
-    
-    // Ocultamos todos los slides o desactivando los puntos
-    for (i = 0; i < arrSlides.length; i++) {
-        arrSlides[i].style.display = "none";
-        arrDots[i].className = arrDots[i].className.replace(" active", "");
-    }
-    
-    // Mostramos el slide y el punto que corresponda al indice
-    arrSlides[slideIndex - 1].style.display = "block";
-    arrDots[slideIndex - 1].className += " active";
+  }
+
+  // Muestra el slide actual y activa su dot
+  arrSlides[slideIndex - 1].style.display = "block";
+  if (arrDots[slideIndex - 1]) {
+    arrDots[slideIndex - 1].classList.add("active");
+  }
 }
-
-
-// Automazimos la llamada a la función nextPrevSlide() usando la función built-in setInterval()
-// Le pasamos el parámetro con el valor 1 para que vaya avanzando al siguiente slide
-
 
 function startAutoSlide() {
-    autoSlide = setInterval(function(){ nextPrevSlide(1); }, 3000);
+  stopAutoSlide();
+  autoSlide = setInterval(function () { nextPrevSlide(1); }, 3000);
 }
 
 function stopAutoSlide() {
-    clearInterval(autoSlide);
+  if (autoSlide) clearInterval(autoSlide);
 }
+
+// Inicializa cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", initSlideshow);

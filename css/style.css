@@ -336,11 +336,11 @@ body {
 .turismo-collage {
   display: flex;
   gap: 20px;
-  padding: 60px 30px;
-  height: 700px;
-  border-radius: 20px;
+  padding: 40px 30px;
+  min-height: 600px;
+  width: 100%;                 /* 🔥 ahora ocupa todo el ancho */
+  box-sizing: border-box;
   font-family: "Climate Crisis", sans-serif;
-  font-size: 30px;
 }
 
 /* Columnas */
@@ -349,53 +349,54 @@ body {
   flex-direction: column;
   gap: 20px;
   border-radius: 20px;
-  flex: 1;
+}
+
+/* Proporciones equilibradas */
+.columna.izquierda {
+  flex: 1.2;
+}
+
+.columna.centro {
+  flex: 1.8;
+}
+
+.columna.derecha {
+  flex: 1.2;
 }
 
 /* Izquierda */
-.izquierda .alto {
-  flex: 3;
+.izquierda .alto,
+.izquierda .bajo {
   background-color: #cce5ff;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+}
+
+.izquierda .alto {
+  flex: 2;
 }
 
 .izquierda .bajo {
   flex: 1;
   background-color: #d4edda;
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Centro */
-.centro {
-  flex: 2;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
 .grande {
-  flex: 1;
+  flex: none;
+  height: 130px;              /* evita que la fila aplaste la imagen */
   background-color: #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 50px;
+  font-size: 46px;
   font-weight: bold;
   border-radius: 20px;
   color: #fff;
   text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.grande:hover {
-  background-color: #cc0000;
 }
 
 .bloque-grid {
@@ -404,7 +405,6 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
-  border-radius: 20px;
 }
 
 .mini-bloque {
@@ -417,35 +417,24 @@ body {
 }
 
 /* Imágenes */
-.imagen-centro-izquierda {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6e/Kiyomizu-dera_in_Kyoto.jpg");
+.imagen-centro-izquierda,
+.imagen-derecha {
   background-size: cover;
   background-position: center;
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
+  border-radius: 20px;
+}
+
+/* Forzar altura visible */
+.imagen-centro-izquierda {
+  min-height: 220px;
 }
 
 .imagen-derecha {
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/0c/Fushimi_Inari-taisha_torii.jpg");
-  background-size: cover;
-  background-position: center;
-  width: 100%;
   height: 100%;
-  min-height: 400px;
+  min-height: 500px;
+  flex: 1;
 }
 
-/* Derecha */
-.derecha {
-  flex: 1;
-  border-radius: 20px;
-}
-
-.completo {
-  flex: 1;
-  height: 100%;
-  border-radius: 20px;
-}
 
 /* CSS PARA LA PÁGINA DE TURISMO */
 
@@ -505,118 +494,102 @@ body {
 
 
 /* naturaleza */
-
-.turismo-naturaleza h1 {
-    text-align: center;
+/* Sección Naturaleza wrapper */
+.turismo-naturaleza {
+  padding: 60px 30px;
+  background-color: #f0f8ff;
 }
 
-.turismo-naturaleza img {
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
+/* Slideshow core (de tu ejemplo) */
+* {
+  box-sizing: border-box;
 }
 
-/* Slideshow container */
-.turismo-naturaleza .slideshow-container {
-    max-width: 720px;
-    position: relative;
-    margin: auto;
-    margin-top: 4em;
+.turismo-slideshow-container.slideshow-container {
+  max-width: 900px;     /* un poco más ancho para desktop */
+  position: relative;
+  margin: 3em auto 1em;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
-/* Hide the images by default */
-.turismo-naturaleza .mySlides {
-    display: none;
+/* Ocultar por defecto */
+.mySlides { display: none; }
+.show-slide { display: block; }
+.hide-slide { display: none; }
+
+/* Flechas */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: auto;
+  padding: 14px 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s ease;
+  border-radius: 50%;
+  user-select: none;
+  background: rgba(0,0,0,0.35);
+  line-height: 1;
+}
+.next { right: 12px; }
+.prev { left: 12px; }
+.prev:hover, .next:hover { background-color: rgba(0,0,0,0.6); }
+
+/* Texto y numeración */
+.text {
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0));
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+.numbertext {
+  color: #fff;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.35);
+  border-bottom-right-radius: 8px;
+  font-family: "Montserrat", sans-serif;
 }
 
-.turismo-naturaleza .show-slide {
-    display: block;
+/* Dots */
+.turismo-slideshow-dots .dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.turismo-slideshow-dots .dot:hover { transform: scale(1.12); }
+.turismo-slideshow-dots .dot.active { background-color: #ff0000; }
+
+/* Fade anim */
+.fade { animation-name: fade; animation-duration: 0.8s; }
+@keyframes fade { from { opacity: 0.4; } to { opacity: 1; } }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .turismo-slideshow-container.slideshow-container { max-width: 100%; }
+  .prev, .next { font-size: 18px; padding: 12px; }
+  .text { font-size: 14px; }
 }
 
-.turismo-naturaleza .hide-slide {
-    display: none;
-}
-
-/* Next & previous buttons */
-.turismo-naturaleza, .prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-/* Position the "next button" to the right */
-.turismo-naturaleza .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.turismo-naturaleza .prev:hover,
-.next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.turismo-naturaleza .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.turismo-naturaleza .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
-
-/* The dots/bullets/indicators */
-.turismo-naturaleza .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.turismo-naturaleza .active,
-.dot:hover {
-    background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0.4;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 /* Guías por la ciudad  */
 .turismo-guias {
