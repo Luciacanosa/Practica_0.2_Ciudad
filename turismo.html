@@ -184,51 +184,26 @@
       </div>
     </section>
 
-    <!-- itinerarios -->
-
-    <!-- Botón que abre modal -->
+<!-- Itinerarios -->
 <section id="itinerarios" class="turismo-itinerarios">
-  <h2>Itinerarios</h2>
-  <p>Explora Kyoto en 1, 2 o 3 días con rutas recomendadas.</p>
-  <button id="abrir-modal-itinerario">Crea tu propio itinerario</button>
+  <h2>Itinerarios - Arrastra para ordenar</h2>
+  <p>Arrastra los destinos para crear tu recorrido ideal por Kioto.</p>
+
+  <ul id="sortable-destinos" class="sortable-list">
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Kinkaku-ji (Pabellón Dorado)</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Fushimi Inari Taisha (sendero de torii)</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Bosque de Bambú de Arashiyama</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Kiyomizu-dera</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Distrito de Gion (paseo histórico)</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Mercado Nishiki</li>
+    <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Castillo Nijo</li>
+  </ul>
+
+  <!-- botón que tú utilizarás; por ahora hace console.log y guarda en localStorage -->
+  <button id="accion-destinos" class="btn-accion">Hacer algo con este orden</button>
 </section>
 
-<!-- Modal para crear itinerario -->
-<div id="modalItinerario" class="modal-itinerario" aria-hidden="true" role="dialog">
-  <div class="modal-content-itinerario" role="document">
-    <button class="close close-crear" aria-label="Cerrar">&times;</button>
-    <h2>Crea tu itinerario</h2>
-    <p>Ordena las actividades según tus preferencias:</p>
 
-    <ul id="sortable" class="sortable-list">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Kinkaku-ji</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Paseo por el distrito de Gion</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Bosque de Bambú de Arashiyama</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo Fushimi Inari Taisha</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Mercado de Nishiki</li>
-    </ul>
-
-    <button id="guardar-itinerario" class="btn-guardar">Guardar itinerario</button>
-  </div>
-</div>
-
-<!-- Modal final de confirmación -->
-<div id="modalGracias" class="modal-itinerario" aria-hidden="true" role="dialog">
-  <div class="modal-content-itinerario" role="document">
-    <button class="close close-gracias" aria-label="Cerrar">&times;</button>
-    <h2>¡Gracias por subir tu itinerario!</h2>
-    <p>¡Lo tendremos en cuenta!</p>
-  </div>
-</div>
-
-<!-- Modal final de confirmación -->
-<div id="modalGracias" class="modal-itinerario">
-  <div class="modal-content-itinerario">
-    <span class="close close-gracias">&times;</span>
-    <h2>¡Gracias por subir tu itinerario!</h2>
-    <p>¡Lo tendremos en cuenta!</p>
-  </div>
-</div>
 
 
 

@@ -273,51 +273,7 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
-  // Inicializa sortable
-  if ($("#sortable").length) {
-    $("#sortable").sortable();
-    $("#sortable").disableSelection();
-  }
 
-  // Abrir modal (selector actualizado)
-  $("#abrir-modal-itinerario").on("click", function () {
-    $("#modalItinerario").fadeIn(150).attr("aria-hidden", "false");
-  });
-
-  // Cerrar modal crear (botón X)
-  $(".close-crear").on("click", function () {
-    $("#modalItinerario").fadeOut(120).attr("aria-hidden", "true");
-  });
-
-  // Guardar -> cerrar crear y abrir gracias
-  $("#guardar-itinerario").on("click", function () {
-    // opcional: leer el orden actual
-    const orden = $("#sortable li").map(function () { return $(this).text().trim(); }).get();
-    console.log("Itinerario guardado (orden):", orden); // para debug / puedes guardar en localStorage o enviar a servidor
-
-    // animación de cierre y apertura
-    $("#modalItinerario").fadeOut(120, function () {
-      $("#modalGracias").fadeIn(200).attr("aria-hidden", "false");
-    });
-  });
-
-  // Cerrar modal gracias
-  $(".close-gracias").on("click", function () {
-    $("#modalGracias").fadeOut(120).attr("aria-hidden", "true");
-  });
-
-  // Cerrar al clicar fuera del contenido
-  $(document).on("click", ".modal-itinerario", function (e) {
-    if (e.target === this) {
-      $(this).fadeOut(120).attr("aria-hidden", "true");
-    }
-  });
-
-  // tecla Esc para cerrar ambos
-  $(document).on("keydown", function (e) {
-    if (e.key === "Escape") {
-      $(".modal-itinerario:visible").fadeOut(120).attr("aria-hidden", "true");
-    }
-  });
-});
+ $( function() {
+    $( "#sortable" ).sortable();
+  } );
