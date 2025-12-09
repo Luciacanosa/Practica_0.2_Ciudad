@@ -67,18 +67,35 @@ body {
   padding: 15px 30px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
+
+  height: 100px; /* altura inicial */
+  transition: all 0.3s ease; /* animación suave */
 }
 
+/* Estado reducido al hacer scroll */
+.navbar.shrink {
+  height: 60px;
+  padding: 10px 20px;
+}
+
+/* Logo */
 .logo img {
   height: 60px;
   width: auto;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .logo img:hover {
   opacity: 0.8;
   transform: scale(1.2);
 }
+
+/* Logo reducido */
+.navbar.shrink .logo img {
+  height: 40px;
+}
+
+/* Links */
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
@@ -87,6 +104,13 @@ body {
   font-family: "Climate Crisis", sans-serif;
   font-size: 40px;
   margin: 25px;
+  transition: font-size 0.3s ease;
+}
+
+/* Links reducidos */
+.navbar.shrink .nav-links a {
+  font-size: 28px;
+  margin: 15px;
 }
 
 /* Icono hamburguesa */
@@ -124,7 +148,17 @@ body {
     margin: 15px 0;
     font-size: 28px;
   }
+
+  /* Ajuste shrink en móvil */
+  .navbar.shrink {
+    height: 50px;
+    padding: 8px 16px;
+  }
+  .navbar.shrink .nav-links a {
+    font-size: 24px;
+  }
 }
+
 
 /* cabecera de la página principal */
 /* se basa en una imagen de fondo y el título que ponga Kyoto */

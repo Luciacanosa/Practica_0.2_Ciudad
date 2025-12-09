@@ -24,6 +24,26 @@ $("a").hover(
   }
 );
 
+
+// efecto disminuir head al hacer scroll
+
+/*jslint devel: true*/
+/*eslint-env browser*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".navbar");
+  const threshold = window.innerHeight / 2;
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > threshold) {
+      header.classList.add("shrink");
+    } else {
+      header.classList.remove("shrink");
+    }
+  });
+});
+
+
 // efecto 3d head 
 (function() {
     const hero = document.querySelector('.hero-kyoto');
