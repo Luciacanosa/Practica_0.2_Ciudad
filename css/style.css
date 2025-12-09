@@ -920,7 +920,7 @@ ul li a.toggle:hover {
 }
 
 .noticia-caja {
-  background-color: #ff0000;
+  background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -939,7 +939,7 @@ ul li a.toggle:hover {
 
 .noticia-caja h3 {
   font-size: 20px;
-  color: #fff;
+  color: #ff0000;
   margin-bottom: 10px;
 }
 
@@ -949,8 +949,8 @@ ul li a.toggle:hover {
 }
 
 .btn-noticia {
-  background-color: #fff;
-  color: #ff0000;
+  background-color: #ff0000;
+  color: #fff;
   padding: 10px 20px;
   border-radius: 30px;
   text-decoration: none;
@@ -980,10 +980,26 @@ ul li a.toggle:hover {
   margin-bottom: 20px;
   font-family: "Climate Crisis", sans-serif;
 }
+
+.trafico h3 {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 20px;
+  font-family: "Climate Crisis", sans-serif;
+  margin: 10px;
+}
 .trafico p {
   font-size: 18px;
   font-weight: bold;
   font-family: "Montserrat", sans-serif;
+  margin: 10px;
+}
+
+.trafico img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  margin: 10px;
 }
 
 /* Footer */
