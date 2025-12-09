@@ -503,96 +503,119 @@ body {
   cursor: pointer;
 }
 
-/* Naturaleza */
-.turismo-naturaleza {
-  padding: 80px 40px;
-  background-color: #f0f8ff;
-}
-.turismo-naturaleza h2 {
-  font-family: "Climate Crisis", sans-serif;
-  font-size: 40px;
-  color: #ff0000;
-  text-align: center;
-  margin-bottom: 24px;
+
+/* naturaleza */
+
+.turismo-naturaleza h1 {
+    text-align: center;
 }
 
-/* Carrusel contenedor */
-.turismo-nat-carousel {
-  position: relative;
-  width: 100%;
-  max-width: 1000px;
-  height: 420px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  background: #eee;
+.turismo-naturaleza img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
 }
 
-/* Track horizontal */
-.turismo-nat-track {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease;
+/* Slideshow container */
+.turismo-naturaleza .slideshow-container {
+    max-width: 720px;
+    position: relative;
+    margin: auto;
+    margin-top: 4em;
 }
 
-/* Slide */
-.turismo-nat-slide {
-  flex: 0 0 100%;
-  position: relative;
-  height: 100%;
-}
-.turismo-nat-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+/* Hide the images by default */
+.turismo-naturaleza .mySlides {
+    display: none;
 }
 
-/* Overlay de información (aparece en hover del carrusel) */
-.turismo-nat-overlay {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 14px 18px;
-  background: rgba(255, 0, 0, 0.75);
-  color: #fff;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-.turismo-nat-carousel:hover .turismo-nat-overlay {
-  opacity: 1;
+.turismo-naturaleza .show-slide {
+    display: block;
 }
 
-/* Puntos */
-.turismo-nat-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin: 16px 0 0;
+.turismo-naturaleza .hide-slide {
+    display: none;
 }
-.turismo-nat-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: #ccc;
-  cursor: pointer;
-  transition: background 0.2s ease, transform 0.2s ease;
+
+/* Next & previous buttons */
+.turismo-naturaleza, .prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
-.turismo-nat-dot:hover {
-  transform: scale(1.08);
+
+/* Position the "next button" to the right */
+.turismo-naturaleza .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
-.turismo-nat-dot.active {
-  background: #ff0000;
+
+/* On hover, add a black background color with a little bit see-through */
+.turismo-naturaleza .prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.turismo-naturaleza .text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.turismo-naturaleza .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.turismo-naturaleza .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.turismo-naturaleza .active,
+.dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Guías por la ciudad  */
@@ -689,10 +712,12 @@ body {
 
 .turismo-railpass p {
   font-family: "Montserrat", sans-serif;
+  color: #000;
   font-weight: 600;
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 24px;
+  
 }
 
 .turismo-railpass .imagen {
@@ -710,6 +735,8 @@ body {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   object-fit: cover;
 }
+
+
 
 /* Botón con pulso suave */
 .btn-parpadeo {
@@ -729,8 +756,8 @@ body {
 
 .btn-parpadeo:hover {
   transform: translateY(-2px);
-  background-color: #ffe6e6;
-  color: #cc0000;
+  background-color: #ff0000;
+  color: #fff;
 }
 
 /* Animación de pulso */
