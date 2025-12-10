@@ -360,7 +360,7 @@ body {
   gap: 80px;
   padding: 80px 40px;
   background-color: #ff0000;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   border-radius: 20px;
 }
@@ -398,7 +398,7 @@ body {
 }
 
 .texto p {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 1.6;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -468,7 +468,7 @@ body {
   gap: 20px;
   padding: 40px 30px;
   min-height: 600px;
-  width: 100%;                 /* 🔥 ahora ocupa todo el ancho */
+  width: 100%;                 /* ocupa todo el ancho */
   box-sizing: border-box;
   font-family: "Climate Crisis", sans-serif;
 }
@@ -497,21 +497,29 @@ body {
 /* Izquierda */
 .izquierda .alto,
 .izquierda .bajo {
-  background-color: #cce5ff;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100%;
+  font-weight: bold;
 }
 
+/* Bloque alto con imagen */
 .izquierda .alto {
   flex: 2;
+  background-image: url("../assets/imagenes turismo/jardinimperial.png"); /* 👈 tu ruta real */
+  background-size: cover;
+  background-position: center;
+  color: #ff0000;
+  font-size: 28px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
+/* Bloque bajo con color */
 .izquierda .bajo {
   flex: 1;
-  background-color: #d4edda;
+  background-color: #ff0000;
 }
 
 /* Centro */
@@ -538,7 +546,7 @@ body {
 }
 
 .mini-bloque {
-  background-color: #fff3cd;
+  background-color: #ff0000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -546,20 +554,24 @@ body {
   border-radius: 20px;
 }
 
-/* Imágenes */
-.imagen-centro-izquierda,
-.imagen-derecha {
+/* Mini-bloque con imagen */
+.imagen-centro-izquierda {
+  background-image: url("../assets/imagenes turismo/naturaleza.jpg"); /* 👈 tu ruta real */
   background-size: cover;
   background-position: center;
   border-radius: 20px;
-}
-
-/* Forzar altura visible */
-.imagen-centro-izquierda {
   min-height: 220px;
+  color: #fff;
+  font-size: 20px;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
+/* Columna derecha con imagen */
 .imagen-derecha {
+  background-image: url("../assets/imagenes turismo/templos.jpg"); /* 👈 tu ruta real */
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
   height: 100%;
   min-height: 500px;
   flex: 1;
