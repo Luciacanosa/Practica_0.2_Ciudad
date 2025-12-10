@@ -979,16 +979,29 @@ body {
   padding: 0;
   width: 60%;
 }
+
 #sortable li {
-  margin: 0 3px 3px 3px;
-  padding: 0.4em;
-  padding-left: 1.5em;
-  font-size: 1.4em;
-  height: 18px;
+  margin: 8px 0;
+  padding: 12px;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+  background-color: #cce5ff;
+  border-radius: 10px;
+  cursor: move;
+  transition: background-color 0.3s ease;
 }
-#sortable li span {
-  position: absolute;
-  margin-left: -1.3em;
+
+#sortable li:hover {
+  background-color: #0044ff;
+  color: #fff;
+}
+
+.ui-state-highlight {
+  height: 2.5em;
+  line-height: 1.2em;
+  background: #ffeeba;
+  border: 2px dashed #ffc107;
+  border-radius: 8px;
 }
 
 /* Rail Pass */

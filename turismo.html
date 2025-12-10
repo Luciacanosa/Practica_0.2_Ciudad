@@ -4,26 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Kyoto</title>
+
+    <!-- Estilos propios -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
-    <!-- jQuery y jQuery UI (CDN: asegúrate de que jQuery esté antes que jQuery UI) -->
+    <!-- jQuery UI CSS -->
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
     />
+
+    <!-- jQuery y jQuery UI (orden correcto: primero jQuery, luego jQuery UI) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
   </head>
+
   <body>
     <!-- para el efecto de que el cursor del ratón sea un circulito rojo -->
     <div class="cursor"></div>
@@ -204,43 +213,15 @@
     </section>
 
     <!-- Itinerarios -->
-    <section id="itinerarios" class="turismo-itinerarios">
-      <h2>Itinerarios - Arrastra para ordenar</h2>
-      <p>Arrastra los destinos para crear tu recorrido ideal por Kioto.</p>
-
-      <ul id="sortable-destinos" class="sortable-list">
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo
-          Kinkaku-ji (Pabellón Dorado)
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Fushimi Inari
-          Taisha (sendero de torii)
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Bosque de Bambú
-          de Arashiyama
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Templo
-          Kiyomizu-dera
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Distrito de Gion
-          (paseo histórico)
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Mercado Nishiki
-        </li>
-        <li class="ui-state-default">
-          <span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Castillo Nijo
-        </li>
+    <section class="itinerarios">
+      <h2>Tu guía personalizada por Kyoto</h2>
+      <ul id="sortable">
+        <li class="ui-state-default">Visitar templos</li>
+        <li class="ui-state-default">Recorrer jardines zen</li>
+        <li class="ui-state-default">Explorar barrios tradicionales</li>
+        <li class="ui-state-default">Degustar gastronomía local</li>
+        <li class="ui-state-default">Ruta por mercados</li>
       </ul>
-
-      <!-- botón que tú utilizarás; por ahora hace console.log y guarda en localStorage -->
-      <button id="accion-destinos" class="btn-accion">
-        Hacer algo con este orden
-      </button>
     </section>
 
     <!-- Rail Pass -->
@@ -269,7 +250,6 @@
       <p>&copy; 2025 Descubrir Kyoto - Todos los derechos reservados</p>
     </footer>
 
-    <script src="js/jquery-ui.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

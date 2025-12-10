@@ -24,7 +24,6 @@ $("a").hover(
   }
 );
 
-
 // efecto disminuir head al hacer scroll
 
 /*jslint devel: true*/
@@ -43,80 +42,81 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// efecto 3d head
+(function () {
+  const hero = document.querySelector(".hero-kyoto");
+  const title = document.querySelector(".hero-title");
 
-// efecto 3d head 
-(function() {
-    const hero = document.querySelector('.hero-kyoto');
-    const title = document.querySelector('.hero-title');
+  // Ajustes del efecto
+  const cfg = {
+    maxRotateX: 18, // grados
+    maxRotateY: 22,
+    maxTranslateX: 100, // px
+    maxTranslateY: 80, // px
+    minScale: 0.76,
+    maxScale: 1.0,
+    maxBlur: 18, // px
+    perspective: 700, // px
+  };
 
-    // Ajustes del efecto
-    const cfg = {
-      maxRotateX: 18,   // grados
-      maxRotateY: 22,
-      maxTranslateX: 100, // px
-      maxTranslateY: 80,  // px
-      minScale: 0.76,
-      maxScale: 1.0,
-      maxBlur: 18,       // px
-      perspective: 700   // px
-    };
+  let width = hero.offsetWidth;
+  let height = hero.offsetHeight;
 
-    let width = hero.offsetWidth;
-    let height = hero.offsetHeight;
+  function updateDims() {
+    width = hero.offsetWidth;
+    height = hero.offsetHeight;
+  }
 
-    function updateDims() {
-      width = hero.offsetWidth;
-      height = hero.offsetHeight;
-    }
+  function mapRange(v, inMin, inMax, outMin, outMax) {
+    return outMin + ((outMax - outMin) * (v - inMin)) / (inMax - inMin);
+  }
 
-    function mapRange(v, inMin, inMax, outMin, outMax) {
-      return outMin + (outMax - outMin) * (v - inMin) / (inMax - inMin);
-    }
+  function applyEffect(clientX, clientY) {
+    const rect = hero.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
 
-    function applyEffect(clientX, clientY) {
-      const rect = hero.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const y = clientY - rect.top;
+    const normX = (x / width) * 2 - 1; // -1 .. 1
+    const normY = (y / height) * 2 - 1; // -1 .. 1
 
-      const normX = (x / width) * 2 - 1;   // -1 .. 1
-      const normY = (y / height) * 2 - 1;  // -1 .. 1
+    const rotY = normX * cfg.maxRotateY; // inclinación lateral
+    const rotX = -normY * cfg.maxRotateX; // inclinación vertical
 
-      const rotY = normX * cfg.maxRotateY;       // inclinación lateral
-      const rotX = -normY * cfg.maxRotateX;      // inclinación vertical
+    const tX = normX * cfg.maxTranslateX;
+    const tY = normY * cfg.maxTranslateY;
 
-      const tX = normX * cfg.maxTranslateX;
-      const tY = normY * cfg.maxTranslateY;
+    // scale y blur según distancia al centro
+    const dist = Math.min(1, Math.sqrt(normX * normX + normY * normY));
+    const scale = mapRange(dist, 1, 0, cfg.minScale, cfg.maxScale);
+    const blur = Math.round(mapRange(dist, 0, 1, cfg.maxBlur, 0));
 
-      // scale y blur según distancia al centro
-      const dist = Math.min(1, Math.sqrt(normX*normX + normY*normY));
-      const scale = mapRange(dist, 1, 0, cfg.minScale, cfg.maxScale);
-      const blur = Math.round(mapRange(dist, 0, 1, cfg.maxBlur, 0));
+    title.style.transform =
+      `perspective(${cfg.perspective}px) translateX(${tX}px) translateY(${tY}px) ` +
+      `scale(${scale}) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
 
-      title.style.transform =
-        `perspective(${cfg.perspective}px) translateX(${tX}px) translateY(${tY}px) ` +
-        `scale(${scale}) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+    title.style.filter = `blur(${blur}px)`;
+  }
 
-      title.style.filter = `blur(${blur}px)`;
-    }
+  // Efecto activo solo en desktop
+  const isTouch = window.matchMedia("(pointer: coarse)").matches;
 
-    // Efecto activo solo en desktop
-    const isTouch = window.matchMedia('(pointer: coarse)').matches;
+  if (!isTouch) {
+    hero.addEventListener("mousemove", (e) =>
+      applyEffect(e.clientX, e.clientY)
+    );
+    window.addEventListener("resize", updateDims);
+    updateDims();
+  } else {
+    // Fallback en móvil: ligera animación al entrar
+    title.classList.add("hero-title-mobile");
+  }
 
-    if (!isTouch) {
-      hero.addEventListener('mousemove', (e) => applyEffect(e.clientX, e.clientY));
-      window.addEventListener('resize', updateDims);
-      updateDims();
-    } else {
-      // Fallback en móvil: ligera animación al entrar
-      title.classList.add('hero-title-mobile');
-    }
-
-    // Restablece al salir
-    hero.addEventListener('mouseleave', () => {
-      title.style.transform = 'none';
-      title.style.filter = 'none';
-    });
-  })();
+  // Restablece al salir
+  hero.addEventListener("mouseleave", () => {
+    title.style.transform = "none";
+    title.style.filter = "none";
+  });
+})();
 
 // menu hambuerguesa para el navbar
 // lógica del menu (simplemente el clik en un icono)
@@ -365,16 +365,16 @@ $(document).ready(function () {
 //   });
 // });
 
-
-
 // sortable para elegir tu propio itinerario
- $( function() {
-    $( "#sortable" ).sortable();
-  } );
 
+$(function () {
+  $("#sortable").sortable({
+    placeholder: "ui-state-highlight",
+  });
+  $("#sortable").disableSelection();
+});
 
-
- // slideShow.js — versión funcional basada en tu ejemplo
+// slideShow.js — versión funcional basada en tu ejemplo
 
 let slideIndex = 1;
 let autoSlide;
@@ -396,8 +396,12 @@ function initSlideshow() {
   }
 
   // Flechas
-  const nextSlideArrow = document.querySelector(".turismo-slideshow-container .next");
-  const prevSlideArrow = document.querySelector(".turismo-slideshow-container .prev");
+  const nextSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .next"
+  );
+  const prevSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .prev"
+  );
 
   nextSlideArrow.addEventListener("click", function () {
     stopAutoSlide();
@@ -428,7 +432,9 @@ function currentDotSlide(dotIndex) {
 }
 
 function showSlide(slideNumber) {
-  const arrSlides = document.querySelectorAll(".turismo-slideshow-container .mySlides");
+  const arrSlides = document.querySelectorAll(
+    ".turismo-slideshow-container .mySlides"
+  );
 
   if (arrSlides.length === 0) return;
 
@@ -456,7 +462,9 @@ function showSlide(slideNumber) {
 
 function startAutoSlide() {
   stopAutoSlide();
-  autoSlide = setInterval(function () { nextPrevSlide(1); }, 3000);
+  autoSlide = setInterval(function () {
+    nextPrevSlide(1);
+  }, 3000);
 }
 
 function stopAutoSlide() {
