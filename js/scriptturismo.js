@@ -252,6 +252,18 @@ function stopAutoSlide() {
 // Inicializa cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", initSlideshow);
 
+// seccion templos
+// Efecto hover para mostrar info del templo
+let $imgHover = $(".img-hover");
+
+$imgHover
+  .on("mouseenter", function () {
+    $(this).next(".templo-info").stop(true, true).slideDown();
+  })
+  .on("mouseleave", function () {
+    $(this).next(".templo-info").stop(true, true).slideUp();
+  });
+
 // ventanas modales para la sección de guías para ver mas informacion con el botón que esta al flip-card
 
 // Abrir modal con contenido dinámico

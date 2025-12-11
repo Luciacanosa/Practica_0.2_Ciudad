@@ -1426,10 +1426,12 @@ body {
 }
 
 /* Templos */
+
 .turismo-templos {
   padding: 80px 40px;
-  background-color: #fff3cd;
+  background-color: #fff;
 }
+
 .turismo-templos h2 {
   font-family: "Climate Crisis", sans-serif;
   font-size: 36px;
@@ -1437,23 +1439,68 @@ body {
   text-align: center;
   margin-bottom: 40px;
 }
-.templos-grid {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-.templo {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+
+.turismo-templos h3 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 36px;
+  color: #b8860b;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-/* =========================
-   Sección Itinerarios
-   ========================= */
+.turismo-templos p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #000;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.templos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.templo-card {
+  background-color: #fff3cd;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+}
+
+.templo-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.templo-card img:hover {
+  transform: scale(1.05);
+}
+
+.templo-info {
+  display: none; /* se muestra con el JS */
+  padding: 20px;
+  font-size: 16px;
+  color: #333;
+}
+
+.templo-info h3 {
+  margin-bottom: 10px;
+  color: #b8860b;
+  font-size: 20px;
+}
+
+/* Sección Itinerarios */
 .itinerarios {
   padding: 80px 40px;
   background-color: #fff;
@@ -1676,37 +1723,94 @@ body {
 
 /* CSS PARA LA PÁGINA DE INFORMACIÓN */
 
-ul.accordion {
-  min-height: 360px;
-}
-
-ul {
+/* =========================
+   Accordion
+   ========================= */
+.accordion {
   list-style: none;
+  margin: 40px auto;
   padding: 0;
+  max-width: 800px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 }
 
-ul .inner {
-  padding-left: 1em;
+.accordion li {
+  margin-bottom: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  display: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ff0000;
 }
 
-ul li {
-  margin: 0.5em 0;
-}
-
-ul li a.toggle {
-  width: 100%;
+/* Título del acordeón */
+.accordion .toggle {
   display: block;
-  background: rgba(0, 0, 0, 0.78);
-  color: #fefefe;
-  padding: 0.75em;
-  border-radius: 0.15em;
-  transition: background 0.3s ease;
+  padding: 16px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-ul li a.toggle:hover {
-  background: rgba(0, 0, 0, 0.9);
+.accordion .toggle:hover {
+  background-color: #fff;
+  color: #ff0000;
+}
+
+/* Flecha indicadora */
+.accordion .toggle::after {
+  content: "▼";
+  position: absolute;
+  right: 20px;
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Estado activo (cuando se despliega) */
+.accordion li.active .toggle::after {
+  transform: rotate(-180deg);
+}
+
+/* Contenido interno */
+.accordion .inner {
+  display: none; /* se controla con JS */
+  padding: 16px 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #000;
+  background-color: #fff;
+  border-top: 1px solid #ff0000;
+}
+
+/* Animación suave */
+.accordion .inner.show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .accordion .toggle {
+    font-size: 16px;
+    padding: 14px 16px;
+  }
+  .accordion .inner {
+    font-size: 14px;
+  }
 }
 
 /* CSS PARA LA PÁGINA NEWSLETTER */
