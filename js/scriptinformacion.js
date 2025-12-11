@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // efecto 3d head
 (function () {
-  const hero = document.querySelector(".hero-kyoto");
-  const title = document.querySelector(".hero-title");
+  const hero = document.querySelector(".hero-kyoto-informacion");
+  const title = document.querySelector(".hero-title-informacion");
 
   // Ajustes del efecto
   const cfg = {
@@ -133,57 +133,38 @@ burger.addEventListener("click", function () {
   menu_opt.classList.toggle("menu-show");
 });
 
-// ventana modal ULTIMA OPORTUNIDAD JRPASS EN 10 SEGUNDOs
+// INFORMACION
 
-// Lógica abrir/cerrar de la ventana modal
-let btnOpenModal = document.querySelector("#openModal");
+$(document).ready(function () {
+  console.log("Online con jQuery");
 
-btnOpenModal.addEventListener("click", openModalWindow);
+  //   convertiomos el titulo con draffable con jQueryUI
+  //   $("#title").draggable();
 
-// Función propia para abrir ventana modal
-function openModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.add("show-modal");
-}
+  let $aBtns = $(".toggle");
 
-let btnCloseModal = document.querySelector(
-  "#modalWindow > .modal-content > .close"
-);
+  $aBtns.on("click", function (e) {
+    e.preventDefault();
+    // cancela el efvento por defecto que tenga el elemento de html
 
-btnCloseModal.addEventListener("click", closeModalWindow);
+    console.log(this);
 
-// Función para cerrar la ventana modal
-function closeModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.remove("show-modal");
-}
+    let $this = $(this);
+    let $this_p = $this.next();
+    $this_p.slideToggle();
+  });
 
-// Cerrar ventana modal cuando se detecta click fuera
-window.addEventListener("click", function (event) {
-  let modal = document.querySelector("#modalWindow");
-  if (event.target == modal) {
-    closeModalWindow();
-  }
+  // show image on hover
+
+  let $imgHover = $(".img-hover");
+
+  $imgHover
+    .on("mouseenter", function (e) {
+      e.preventDefault();
+      $(this).next().stop(true, true).slideDown();
+    })
+    .on("mouseleave", function (e) {
+      e.preventDefault();
+      $(this).next().stop(true, true).slideUp();
+    });
 });
-
-// Abrir modal automáticamente a los 10 segundos
-setTimeout(openModalWindow, 10000);
-
-// carrusel fotos parte historia pag principal
-function iniciarCarrusel(selector) {
-  const images = document.querySelectorAll(selector + " img");
-  let index = 0;
-
-  function showNextImage() {
-    images.forEach((img) => img.classList.remove("active"));
-    images[index].classList.add("active");
-    index = (index + 1) % images.length;
-  }
-
-  showNextImage(); // mostrar la primera
-  setInterval(showNextImage, 3000); // cambiar cada 3 segundos
-}
-
-// Inicia cada carrusel por separado
-iniciarCarrusel(".carrusel.historia");
-iniciarCarrusel(".carrusel.cultura");

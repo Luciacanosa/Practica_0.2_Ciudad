@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // efecto 3d head
 (function () {
-  const hero = document.querySelector(".hero-kyoto");
-  const title = document.querySelector(".hero-title");
+  const hero = document.querySelector(".hero-kyoto-news");
+  const title = document.querySelector(".hero-title-news");
 
   // Ajustes del efecto
   const cfg = {
@@ -133,57 +133,56 @@ burger.addEventListener("click", function () {
   menu_opt.classList.toggle("menu-show");
 });
 
-// ventana modal ULTIMA OPORTUNIDAD JRPASS EN 10 SEGUNDOs
+// PÁGINA NEWSLETTER
 
-// Lógica abrir/cerrar de la ventana modal
-let btnOpenModal = document.querySelector("#openModal");
+// Mostrar el día actual
+$(document).ready(function () {
+  const dias = [
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
+  ];
+  let hoy = new Date();
+  $("#diaActual").text("Hoy es " + dias[hoy.getDay()]);
 
-btnOpenModal.addEventListener("click", openModalWindow);
+  $(document).ready(function () {
+    const estados = [
+      "Despejado",
+      "Mayormente nublado",
+      "Parcialmente nublado",
+      "Lluvias ligeras",
+      "Tormentas aisladas",
+    ];
 
-// Función propia para abrir ventana modal
-function openModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.add("show-modal");
-}
+    // Cambia el estado del tiempo cada 6 segundos en cada bloque
+    $(".dia").each(function (index, element) {
+      let estadoElem = $(element).find(".estado");
+      let i = 0;
+      setInterval(function () {
+        i = (i + 1) % estados.length;
+        estadoElem.fadeOut(300, function () {
+          $(this).text(estados[i]).fadeIn(300);
+        });
+      }, 6000 + index * 500); // escalonado para que no cambien todos a la vez
+    });
+  });
 
-let btnCloseModal = document.querySelector(
-  "#modalWindow > .modal-content > .close"
-);
-
-btnCloseModal.addEventListener("click", closeModalWindow);
-
-// Función para cerrar la ventana modal
-function closeModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.remove("show-modal");
-}
-
-// Cerrar ventana modal cuando se detecta click fuera
-window.addEventListener("click", function (event) {
-  let modal = document.querySelector("#modalWindow");
-  if (event.target == modal) {
-    closeModalWindow();
-  }
+  // Efecto dinámico en el tráfico (cambia cada 7 segundos)
+  const estadosTrafico = [
+    "Tráfico fluido en la mayoría de avenidas",
+    "Congestión en el centro histórico",
+    "Retrasos en la línea de autobuses",
+    "Carreteras despejadas hacia los templos",
+  ];
+  let indexTrafico = 0;
+  setInterval(function () {
+    indexTrafico = (indexTrafico + 1) % estadosTrafico.length;
+    $("#traficoTexto").slideUp(500, function () {
+      $(this).text(estadosTrafico[indexTrafico]).slideDown(500);
+    });
+  }, 7000);
 });
-
-// Abrir modal automáticamente a los 10 segundos
-setTimeout(openModalWindow, 10000);
-
-// carrusel fotos parte historia pag principal
-function iniciarCarrusel(selector) {
-  const images = document.querySelectorAll(selector + " img");
-  let index = 0;
-
-  function showNextImage() {
-    images.forEach((img) => img.classList.remove("active"));
-    images[index].classList.add("active");
-    index = (index + 1) % images.length;
-  }
-
-  showNextImage(); // mostrar la primera
-  setInterval(showNextImage, 3000); // cambiar cada 3 segundos
-}
-
-// Inicia cada carrusel por separado
-iniciarCarrusel(".carrusel.historia");
-iniciarCarrusel(".carrusel.cultura");

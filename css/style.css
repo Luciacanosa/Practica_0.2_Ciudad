@@ -165,7 +165,7 @@ body {
 /* Hero base */
 .hero-kyoto {
   height: 100vh;
-  background-image: url("img/kyoto-header.jpg");
+  background-image: url("../assets/imgheaders/fondo1.jpg");
   background-size: cover;
   background-position: center;
   display: grid;
@@ -204,6 +204,180 @@ body {
 
 /* Fallback móvil: pequeño scale-in */
 .hero-title-mobile {
+  animation: heroFloatIn 900ms ease both;
+}
+
+@keyframes heroFloatIn {
+  from {
+    transform: perspective(700px) translateY(25px) scale(0.9) rotateX(-6deg);
+    filter: blur(6px);
+    opacity: 0.2;
+  }
+  to {
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+}
+
+/* hero para turismo */
+
+.hero-kyoto-turismo {
+  height: 100vh;
+  background-image: url("../assets/imgheaders/fondo2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 60px;
+}
+
+.hero-kyoto-turismo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0.15)
+  );
+  pointer-events: none;
+}
+
+.hero-title-turismo {
+  position: relative;
+  z-index: 1;
+  font-family: "Climate Crisis", sans-serif;
+  color: #fff;
+  font-size: clamp(48px, 10vw, 140px);
+  letter-spacing: 2px;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  will-change: transform, filter;
+  transition: transform 80ms linear, filter 80ms linear;
+}
+
+/* Fallback móvil: pequeño scale-in */
+.hero-title-turismo-mobile {
+  animation: heroFloatIn 900ms ease both;
+}
+
+@keyframes heroFloatIn {
+  from {
+    transform: perspective(700px) translateY(25px) scale(0.9) rotateX(-6deg);
+    filter: blur(6px);
+    opacity: 0.2;
+  }
+  to {
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+}
+
+/* hero para informacion */
+
+.hero-kyoto-informacion {
+  height: 100vh;
+  background-image: url("../assets/imgheaders/fondo3.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 60px;
+}
+
+.hero-kyoto-informacion::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0.15)
+  );
+  pointer-events: none;
+}
+
+.hero-title-informacion {
+  position: relative;
+  z-index: 1;
+  font-family: "Climate Crisis", sans-serif;
+  color: #fff;
+  font-size: clamp(48px, 10vw, 140px);
+  letter-spacing: 2px;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  will-change: transform, filter;
+  transition: transform 80ms linear, filter 80ms linear;
+}
+
+/* Fallback móvil: pequeño scale-in */
+.hero-title-informacion-mobile {
+  animation: heroFloatIn 900ms ease both;
+}
+
+@keyframes heroFloatIn {
+  from {
+    transform: perspective(700px) translateY(25px) scale(0.9) rotateX(-6deg);
+    filter: blur(6px);
+    opacity: 0.2;
+  }
+  to {
+    transform: none;
+    filter: none;
+    opacity: 1;
+  }
+}
+
+/* hero para newsletter */
+
+.hero-kyoto-news {
+  height: 100vh;
+  background-image: url("../assets/imgheaders/fondo4.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+
+  margin-bottom: 60px;
+}
+
+.hero-kyoto-news::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.25) 60%,
+    rgba(0, 0, 0, 0.15)
+  );
+  pointer-events: none;
+}
+
+.hero-title-news {
+  position: relative;
+  z-index: 1;
+  font-family: "Climate Crisis", sans-serif;
+  color: #fff;
+  font-size: clamp(48px, 10vw, 140px);
+  letter-spacing: 2px;
+  text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  will-change: transform, filter;
+  transition: transform 80ms linear, filter 80ms linear;
+}
+
+/* Fallback móvil: pequeño scale-in */
+.hero-title-news-mobile {
   animation: heroFloatIn 900ms ease both;
 }
 
@@ -1263,6 +1437,22 @@ ul li a.toggle:hover {
 
 /* Día actual */
 .dia-semana {
+  background-color: #228b22;
+
+  margin: 40px auto 20px;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 700px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Climate Crisis", sans-serif;
+  text-align: center;
+}
+
+.dia-semana:hover {
   background-color: #fff;
   margin: 40px auto 20px;
   padding: 20px;
@@ -1273,6 +1463,10 @@ ul li a.toggle:hover {
   font-weight: bold;
   color: #228b22;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: "Climate Crisis", sans-serif;
+  text-align: center;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Tiempo a pantalla completa */
@@ -1303,7 +1497,7 @@ ul li a.toggle:hover {
 }
 
 .dia {
-  background-color: #f0f8ff;
+  background-color: #fff;
   border-left: 6px solid #228b22;
   padding: 25px;
   border-radius: 12px;

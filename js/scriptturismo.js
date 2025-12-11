@@ -44,8 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // efecto 3d head
 (function () {
-  const hero = document.querySelector(".hero-kyoto");
-  const title = document.querySelector(".hero-title");
+  const hero = document.querySelector(".hero-kyoto-turismo");
+  const title = document.querySelector(".hero-title-turismo");
 
   // Ajustes del efecto
   const cfg = {
@@ -133,57 +133,111 @@ burger.addEventListener("click", function () {
   menu_opt.classList.toggle("menu-show");
 });
 
-// ventana modal ULTIMA OPORTUNIDAD JRPASS EN 10 SEGUNDOs
+// sortable para elegir tu propio itinerario
 
-// Lógica abrir/cerrar de la ventana modal
-let btnOpenModal = document.querySelector("#openModal");
-
-btnOpenModal.addEventListener("click", openModalWindow);
-
-// Función propia para abrir ventana modal
-function openModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.add("show-modal");
-}
-
-let btnCloseModal = document.querySelector(
-  "#modalWindow > .modal-content > .close"
-);
-
-btnCloseModal.addEventListener("click", closeModalWindow);
-
-// Función para cerrar la ventana modal
-function closeModalWindow() {
-  let modalWindow = document.querySelector("#modalWindow");
-  modalWindow.classList.remove("show-modal");
-}
-
-// Cerrar ventana modal cuando se detecta click fuera
-window.addEventListener("click", function (event) {
-  let modal = document.querySelector("#modalWindow");
-  if (event.target == modal) {
-    closeModalWindow();
-  }
+$(function () {
+  $("#sortable").sortable({
+    placeholder: "ui-state-highlight",
+  });
+  $("#sortable").disableSelection();
 });
 
-// Abrir modal automáticamente a los 10 segundos
-setTimeout(openModalWindow, 10000);
+// slideShow.js — versión funcional basada en tu ejemplo
 
-// carrusel fotos parte historia pag principal
-function iniciarCarrusel(selector) {
-  const images = document.querySelectorAll(selector + " img");
-  let index = 0;
+let slideIndex = 1;
+let autoSlide;
+let arrDots;
 
-  function showNextImage() {
-    images.forEach((img) => img.classList.remove("active"));
-    images[index].classList.add("active");
-    index = (index + 1) % images.length;
+function initSlideshow() {
+  // Asegura que el DOM está listo y las dots existen
+  arrDots = document.querySelectorAll(".turismo-slideshow-dots .dot");
+  showSlide(slideIndex);
+  startAutoSlide();
+
+  // Eventos de dots
+  for (let k = 0; k < arrDots.length; k++) {
+    arrDots[k].addEventListener("click", function () {
+      stopAutoSlide();
+      currentDotSlide(k);
+      startAutoSlide();
+    });
   }
 
-  showNextImage(); // mostrar la primera
-  setInterval(showNextImage, 3000); // cambiar cada 3 segundos
+  // Flechas
+  const nextSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .next"
+  );
+  const prevSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .prev"
+  );
+
+  nextSlideArrow.addEventListener("click", function () {
+    stopAutoSlide();
+    nextPrevSlide(1);
+    startAutoSlide();
+  });
+
+  prevSlideArrow.addEventListener("click", function () {
+    stopAutoSlide();
+    nextPrevSlide(-1);
+    startAutoSlide();
+  });
+
+  // Pausar autoplay en hover del contenedor
+  const container = document.querySelector(".turismo-slideshow-container");
+  container.addEventListener("mouseenter", stopAutoSlide);
+  container.addEventListener("mouseleave", startAutoSlide);
 }
 
-// Inicia cada carrusel por separado
-iniciarCarrusel(".carrusel.historia");
-iniciarCarrusel(".carrusel.cultura");
+function nextPrevSlide(index) {
+  slideIndex = slideIndex + index;
+  showSlide(slideIndex);
+}
+
+function currentDotSlide(dotIndex) {
+  slideIndex = dotIndex + 1;
+  showSlide(slideIndex);
+}
+
+function showSlide(slideNumber) {
+  const arrSlides = document.querySelectorAll(
+    ".turismo-slideshow-container .mySlides"
+  );
+
+  if (arrSlides.length === 0) return;
+
+  if (slideNumber > arrSlides.length) {
+    slideIndex = 1;
+  }
+  if (slideNumber < 1) {
+    slideIndex = arrSlides.length;
+  }
+
+  // Oculta todos y desactiva puntos
+  for (let i = 0; i < arrSlides.length; i++) {
+    arrSlides[i].style.display = "none";
+    if (arrDots[i]) {
+      arrDots[i].classList.remove("active");
+    }
+  }
+
+  // Muestra el slide actual y activa su dot
+  arrSlides[slideIndex - 1].style.display = "block";
+  if (arrDots[slideIndex - 1]) {
+    arrDots[slideIndex - 1].classList.add("active");
+  }
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlide = setInterval(function () {
+    nextPrevSlide(1);
+  }, 3000);
+}
+
+function stopAutoSlide() {
+  if (autoSlide) clearInterval(autoSlide);
+}
+
+// Inicializa cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", initSlideshow);
