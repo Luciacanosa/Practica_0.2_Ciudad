@@ -1610,8 +1610,8 @@ ul li a.toggle:hover {
   transition: all 0.3s ease;
 }
 .btn-noticia:hover {
-  background-color: #228b22;
-  color: #fff;
+  background-color: #fff;
+  color: #228b22;
   border: 2px solid #fff;
 }
 
