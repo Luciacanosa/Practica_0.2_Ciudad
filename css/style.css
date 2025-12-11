@@ -1351,7 +1351,8 @@ body {
 }
 
 /* Modal */
-.modal {
+/* Ventanas modales para las flip-cards al darle al botón de ver más */
+.modal-turismo {
   display: none;
   position: fixed;
   z-index: 1000;
@@ -1361,10 +1362,12 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
-.modal.show-modal {
+
+.modal-turismo.show-modal {
   display: block;
 }
-.modal-content {
+
+.modal-turismo .modal-content {
   background-color: #fff;
   margin: 10% auto;
   padding: 30px;
@@ -1374,7 +1377,8 @@ body {
   font-family: "Montserrat", sans-serif;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
-.modal-content .close {
+
+.modal-turismo .modal-content .close {
   float: right;
   font-size: 28px;
   font-weight: bold;

@@ -118,11 +118,11 @@
         <button>Ver sección</button>
       </div>
     </section>
-
     <!-- Guías por la ciudad -->
     <section id="guias" class="turismo-guias">
       <h2>Guías por la ciudad</h2>
       <div class="guias-carousel">
+        <!-- Guía 1 -->
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -135,11 +135,12 @@
             <div class="flip-card-back">
               <h2>Ruta de los Templos Zen</h2>
               <p>Descubre Kinkaku-ji, Ryoan-ji y Ginkaku-ji.</p>
-              <button id="openModal" data-guide="templos">Ver más</button>
+              <button class="openModalBtn" data-guide="templos">Ver más</button>
             </div>
           </div>
         </article>
 
+        <!-- Guía 2 -->
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -152,11 +153,12 @@
             <div class="flip-card-back">
               <h2>Gion y Higashiyama</h2>
               <p>Barrios tradicionales y cultura geisha.</p>
-              <button id="openModal" data-guide="gion">Ver más</button>
+              <button class="openModalBtn" data-guide="gion">Ver más</button>
             </div>
           </div>
         </article>
 
+        <!-- Guía 3 -->
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -169,11 +171,14 @@
             <div class="flip-card-back">
               <h2>Arashiyama</h2>
               <p>Bosque de bambú y puente Togetsukyo.</p>
-              <button id="openModal" data-guide="arashiyama">Ver más</button>
+              <button class="openModalBtn" data-guide="arashiyama">
+                Ver más
+              </button>
             </div>
           </div>
         </article>
 
+        <!-- Guía 4 -->
         <article class="flip-card">
           <div class="flip-card-inner">
             <div class="flip-card-front">
@@ -186,7 +191,7 @@
             <div class="flip-card-back">
               <h2>Mercados y Gastronomía</h2>
               <p>Sabores locales en Nishiki Market.</p>
-              <button id="openModal" data-guide="nishiki">Ver más</button>
+              <button class="openModalBtn" data-guide="nishiki">Ver más</button>
             </div>
           </div>
         </article>
@@ -194,7 +199,7 @@
     </section>
 
     <!-- Ventana modal -->
-    <div id="modalWindow" class="modal">
+    <div id="modalWindow" class="modal-turismo">
       <div class="modal-content">
         <span class="close">&times;</span>
         <div id="modalText">

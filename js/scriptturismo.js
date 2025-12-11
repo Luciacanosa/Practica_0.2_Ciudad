@@ -245,6 +245,51 @@ document.addEventListener("DOMContentLoaded", initSlideshow);
 // ventanas modales para la sección de guías para ver mas informacion con el botón que esta al flip-card
 
 // Abrir modal con contenido dinámico
+// document.querySelectorAll("#openModal").forEach((btn) => {
+//   btn.addEventListener("click", function () {
+//     let guide = this.getAttribute("data-guide");
+//     let modalWindow = document.querySelector("#modalWindow");
+//     let modalText = document.querySelector("#modalText");
+
+//     // Contenido según guía
+//     if (guide === "templos") {
+//       modalText.innerHTML =
+//         "<h2>Ruta de los Templos Zen</h2><p>Visita Kinkaku-ji (Pabellón Dorado), Ryoan-ji con su famoso jardín de rocas, y Ginkaku-ji (Pabellón Plateado). Es una ruta clásica para entender la espiritualidad zen en Kyoto.</p>";
+//     } else if (guide === "gion") {
+//       modalText.innerHTML =
+//         "<h2>Gion y Higashiyama</h2><p>Recorre las calles históricas de Gion, observa casas de té y quizás una geisha en plena actividad. Higashiyama ofrece templos como Kiyomizu-dera y vistas espectaculares de la ciudad.</p>";
+//     } else if (guide === "arashiyama") {
+//       modalText.innerHTML =
+//         "<h2>Arashiyama</h2><p>Explora el bosque de bambú, cruza el puente Togetsukyo y disfruta de un paseo en barca por el río Katsura. Ideal para combinar naturaleza y tradición.</p>";
+//     } else if (guide === "nishiki") {
+//       modalText.innerHTML =
+//         "<h2>Mercados y Gastronomía</h2><p>El Nishiki Market es el corazón culinario de Kyoto. Prueba dulces wagashi, encurtidos tsukemono, sashimi fresco y el famoso té matcha. Perfecto para los amantes de la comida.</p>";
+//     }
+
+//     modalWindow.classList.add("show-modal");
+//   });
+// });
+
+// // Cerrar modal
+// let btnCloseModal = document.querySelector(
+//   "#modalWindow > .modal-content > .close"
+// );
+// btnCloseModal.addEventListener("click", closeModalWindow);
+
+// function closeModalWindow() {
+//   let modalWindow = document.querySelector("#modalWindow");
+//   modalWindow.classList.remove("show-modal");
+// }
+
+// // Cerrar al hacer click fuera
+// window.addEventListener("click", function (event) {
+//   let modal = document.querySelector("#modalWindow");
+//   if (event.target == modal) {
+//     closeModalWindow();
+//   }
+// });
+
+// Abrir modal con contenido dinámico
 document.querySelectorAll("#openModal").forEach((btn) => {
   btn.addEventListener("click", function () {
     let guide = this.getAttribute("data-guide");
