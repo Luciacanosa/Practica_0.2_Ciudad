@@ -92,14 +92,14 @@
 
     <!-- Índice visual -->
     <section class="turismo-indice">
-      <div class="indice-item" onclick="location.href='#naturaleza'">
-        <img src="assets/imagenes turismo/naturaleza.jpg" alt="Naturaleza" />
-        <h3>Naturaleza</h3>
-        <button>Ver sección</button>
-      </div>
       <div class="indice-item" onclick="location.href='#guias'">
         <img src="assets/imagenes turismo/guias.jpg" alt="Guías" />
         <h3>Guías</h3>
+        <button>Ver sección</button>
+      </div>
+      <div class="indice-item" onclick="location.href='#naturaleza'">
+        <img src="assets/imagenes turismo/naturaleza.jpg" alt="Naturaleza" />
+        <h3>Naturaleza</h3>
         <button>Ver sección</button>
       </div>
       <div class="indice-item" onclick="location.href='#templos'">
@@ -118,6 +118,92 @@
         <button>Ver sección</button>
       </div>
     </section>
+
+    <!-- Guías por la ciudad -->
+    <section id="guias" class="turismo-guias">
+      <h2>Guías por la ciudad</h2>
+      <div class="guias-carousel">
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="assets/imagenes turismo/temploszen.jpg"
+                alt="Ruta de los Templos Zen"
+              />
+              <h2>Ruta de los Templos Zen</h2>
+            </div>
+            <div class="flip-card-back">
+              <h2>Ruta de los Templos Zen</h2>
+              <p>Descubre Kinkaku-ji, Ryoan-ji y Ginkaku-ji.</p>
+              <button id="openModal" data-guide="templos">Ver más</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="assets/imagenes turismo/guion.png"
+                alt="Gion y Higashiyama"
+              />
+              <h2>Gion y Higashiyama</h2>
+            </div>
+            <div class="flip-card-back">
+              <h2>Gion y Higashiyama</h2>
+              <p>Barrios tradicionales y cultura geisha.</p>
+              <button id="openModal" data-guide="gion">Ver más</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="assets/imagenes turismo/arashiyama.jpg"
+                alt="Arashiyama"
+              />
+              <h2>Arashiyama</h2>
+            </div>
+            <div class="flip-card-back">
+              <h2>Arashiyama</h2>
+              <p>Bosque de bambú y puente Togetsukyo.</p>
+              <button id="openModal" data-guide="arashiyama">Ver más</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img
+                src="assets/imagenes turismo/mercados.jpg"
+                alt="Mercados y Gastronomía"
+              />
+              <h2>Mercados y Gastronomía</h2>
+            </div>
+            <div class="flip-card-back">
+              <h2>Mercados y Gastronomía</h2>
+              <p>Sabores locales en Nishiki Market.</p>
+              <button id="openModal" data-guide="nishiki">Ver más</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Ventana modal -->
+    <div id="modalWindow" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalText">
+          <!-- Aquí se cargará la info de cada guía -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Naturaleza -->
 
     <section class="turismo-naturaleza" id="naturaleza">
       <h2 class="climate-crisis" style="text-align: center; color: #ff0000">
@@ -195,19 +281,6 @@
         <span class="dot" aria-label="Ver slide 3"></span>
         <span class="dot" aria-label="Ver slide 4"></span>
         <span class="dot" aria-label="Ver slide 5"></span>
-      </div>
-    </section>
-
-    <!-- Guías por la ciudad -->
-    <section id="guias" class="turismo-guias">
-      <h2>Guías por la ciudad</h2>
-      <div class="guias-carousel">
-        <button class="flecha izquierda">←</button>
-        <div class="guia">Guía 1</div>
-        <div class="guia">Guía 2</div>
-        <div class="guia">Guía 3</div>
-        <div class="guia">Guía 4</div>
-        <button class="flecha derecha">→</button>
       </div>
     </section>
 

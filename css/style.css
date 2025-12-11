@@ -22,6 +22,7 @@
 html,
 body {
   cursor: none !important;
+  scroll-behavior: smooth;
 }
 
 /* cursor para informacion */
@@ -1094,6 +1095,17 @@ body {
   cursor: pointer;
 }
 
+.indice-item button:hover {
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background-color: #fff;
+  color: #b8860b;
+  border: none;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /* naturaleza */
 /* Sección Naturaleza wrapper */
 .turismo-naturaleza {
@@ -1227,7 +1239,7 @@ body {
   }
 }
 
-/* Guías por la ciudad  */
+/* Guías por la ciudad */
 .turismo-guias {
   padding: 80px 40px;
   background-color: #fff;
@@ -1235,31 +1247,146 @@ body {
 .turismo-guias h2 {
   font-family: "Climate Crisis", sans-serif;
   font-size: 36px;
-  color: B8860B;
+  color: #b8860b;
   text-align: center;
   margin-bottom: 30px;
 }
 .guias-carousel {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
 }
-.flecha {
-  font-size: 24px;
+
+/* Tarjetas flip */
+.flip-card {
+  background-color: transparent;
+  width: 260px;
+  height: 360px;
+  perspective: 1000px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+/* Cara frontal */
+.flip-card-front {
+  background-color: #fff3cd;
+  color: #333;
+}
+.flip-card-front img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.flip-card-front h2 {
+  font-size: 20px;
+  margin: 0;
+  color: #b8860b;
+}
+
+/* Cara trasera */
+.flip-card-back {
   background-color: #b8860b;
   color: #fff;
+  transform: rotateY(180deg);
+  justify-content: space-between;
+}
+.flip-card-back h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.flip-card-back p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 10px;
+}
+.flip-card-back button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #b8860b;
   border: none;
-  padding: 10px;
-  border-radius: 50%;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.flip-card-back button:hover {
+  background-color: #333;
+  color: #ffd700;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.modal.show-modal {
+  display: block;
+}
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 80%;
+  max-width: 600px;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.modal-content .close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
 }
-.guia {
-  background-color: #fff3cd;
-  padding: 40px;
-  border-radius: 20px;
-  font-weight: bold;
-  font-family: "Montserrat", sans-serif;
+
+/* Responsive */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 90%;
+    height: 380px;
+  }
 }
 
 /* Templos */
