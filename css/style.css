@@ -41,7 +41,7 @@ body {
 
 .cursor-grow {
   transform: translate(-50%, -50%) scale(1.6);
-  background-color: transparent; /* opcional: solo borde al crecer */
+  background-color: transparent;
   border: 2px solid #ff0000;
   background-color: #ff0000;
 }
@@ -68,8 +68,8 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 
-  height: 100px; /* altura inicial */
-  transition: all 0.3s ease; /* animación suave */
+  height: 100px;
+  transition: all 0.3s ease;
 }
 
 /* Estado reducido al hacer scroll */
@@ -173,7 +173,7 @@ body {
   position: relative;
   overflow: hidden;
 
-  margin-bottom: 60px; /* 👈 espacio debajo del hero */
+  margin-bottom: 60px;
 }
 
 /* Overlay sutil para contraste del texto */
@@ -227,7 +227,7 @@ body {
 
 /* ventana modal ULTIMA OPORTUNIDAD JRPASS */
 .modal {
-  display: none; /* oculta por defecto */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -242,7 +242,7 @@ body {
 }
 
 .show-modal {
-  display: flex; /* se muestra y se centra */
+  display: flex;
 }
 
 .modal-content {
@@ -254,7 +254,7 @@ body {
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   color: #fff;
-  position: relative; /* necesario para posicionar la X dentro */
+  position: relative;
 }
 
 .close {
@@ -278,7 +278,7 @@ body {
 }
 
 .show-modal {
-  display: flex; /* 👈 activa el flexbox para centrar */
+  display: flex;
 }
 
 .btn-turismo {
@@ -288,7 +288,7 @@ body {
   background-color: #ff0000;
   color: #fff;
   border: 2px solid #fff;
-  border-radius: 30px; /* más redondeado */
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -538,12 +538,12 @@ body {
   }
 
   .bloque {
-    flex-direction: column; /* apilar texto e imagen */
+    flex-direction: column;
     align-items: center;
   }
 
   .texto {
-    width: 100%; /* ocupa todo el ancho */
+    width: 100%;
     padding: 16px;
   }
 
@@ -561,20 +561,19 @@ body {
   .btn-vermas {
     font-size: 16px;
     padding: 10px 20px;
-    margin: 15px auto 0; /* centrado */
+    margin: 15px auto 0;
   }
 
   .imagen {
     width: 100%;
     max-width: 100%;
-    /* fuerza altura automática */
     height: auto;
   }
 
   .imagen img {
     width: 100%;
-    height: auto; /* que se adapte al ancho */
-    max-height: none; /* elimina la restricción que las oculta */
+    height: auto;
+    max-height: none;
     display: block;
     border-radius: 12px;
   }
@@ -584,7 +583,7 @@ body {
   gap: 20px;
   padding: 40px 30px;
   min-height: 600px;
-  width: 100%; /* ocupa todo el ancho */
+  width: 100%;
   box-sizing: border-box;
   font-family: "Climate Crisis", sans-serif;
   font-style: normal;
@@ -638,7 +637,7 @@ body {
 /* Bloque bajo con color */
 .izquierda .bajo {
   flex: 1;
-  background-color: #0044ff; /* verde suave */
+  background-color: #0044ff;
   font-size: 26px;
   color: #fff;
   justify-content: center;
@@ -742,21 +741,21 @@ body {
 /* Responsive para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .turismo-collage {
-    flex-direction: column; /* columnas apiladas */
+    flex-direction: column;
     gap: 30px;
     padding: 20px;
-    min-height: auto; /* altura automática */
+    min-height: auto;
   }
 
   .columna {
-    flex: none; /* que no intente ocupar proporciones */
-    width: 100%; /* cada columna ocupa todo el ancho */
+    flex: none;
+    width: 100%;
   }
 
   /* Ajustes de bloques */
   .izquierda .alto {
     font-size: 24px;
-    min-height: 200px; /* altura más pequeña */
+    min-height: 200px;
   }
 
   .izquierda .bajo {
@@ -772,7 +771,7 @@ body {
   }
 
   .bloque-grid {
-    grid-template-columns: 1fr; /* una sola columna */
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
 
@@ -860,7 +859,7 @@ body {
 }
 
 .turismo-slideshow-container.slideshow-container {
-  max-width: 900px; /* un poco más ancho para desktop */
+  max-width: 900px;
   position: relative;
   margin: 3em auto 1em;
   border-radius: 16px;
@@ -1075,7 +1074,7 @@ body {
 
 /* Rail Pass */
 .turismo-railpass {
-  background-color: #b8860b; /* rojo Kyoto */
+  background-color: #b8860b;
   color: #fff;
   padding: 80px 40px;
   display: flex;
@@ -1083,7 +1082,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  border-top-left-radius: 40px; /* eco del estilo newsletter */
+  border-top-left-radius: 40px;
   border-top-right-radius: 40px;
 }
 

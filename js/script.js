@@ -473,3 +473,37 @@ function stopAutoSlide() {
 
 // Inicializa cuando el DOM esté listo
 document.addEventListener("DOMContentLoaded", initSlideshow);
+
+
+
+
+// INFORMACION
+
+$(document).ready(function () {
+  console.log("Online con jQuery");
+
+  //   convertiomos el titulo con draffable con jQueryUI
+  $("#title").draggable();
+
+  let $aBtns = $(".toggle");
+
+  $aBtns.on("click", function (e) {
+    e.preventDefault();
+    // cancela el efvento por defecto que tenga el elemento de html
+
+    let $this = $(this);
+    let $this_p = $this.next();
+    $this_p.slideToggle();
+  });
+
+  // show image on hover
+
+  let $imgHover = $(".img-hover");
+
+  $imgHover
+    .on("mouseenter", function () {
+      $(this).next().stop(true, true).slideDown();
+    })
+    .on("mouseleave", function () {
+      $(this).next().stop(true, true).slideUp();
+    });
