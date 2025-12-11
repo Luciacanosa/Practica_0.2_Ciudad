@@ -142,6 +142,16 @@ $(function () {
   $("#sortable").disableSelection();
 });
 
+// Botón guardar itinerario
+document.addEventListener("DOMContentLoaded", function () {
+  const saveBtn = document.getElementById("saveItineraryBtn");
+  saveBtn.addEventListener("click", function () {
+    alert(
+      "¡Perfecto, guardaremos tu preferencias para cuando realices tu viajes!"
+    );
+  });
+});
+
 // slideShow.js — versión funcional basada en tu ejemplo
 
 let slideIndex = 1;
