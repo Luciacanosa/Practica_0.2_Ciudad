@@ -1,14 +1,14 @@
 // efectos para el cursor
 
 $(document).mousemove(function (e) {
-  $(".cursor").css({
+  $(".cursor-turismo").css({
     left: e.clientX + "px", // 👈 usa clientX/clientY
     top: e.clientY + "px",
   });
 });
 
 document.addEventListener("mousemove", (e) => {
-  const el = document.querySelector(".cursor");
+  const el = document.querySelector(".cursor-turismo");
   if (!el) return;
   el.style.left = e.clientX + "px";
   el.style.top = e.clientY + "px";
@@ -17,10 +17,10 @@ document.addEventListener("mousemove", (e) => {
 // opcional: efecto al pasar por enlaces
 $("a").hover(
   function () {
-    $(".cursor").addClass("cursor-grow");
+    $(".cursor-turismo").addClass("cursor-grow");
   },
   function () {
-    $(".cursor").removeClass("cursor-grow");
+    $(".cursor-turismo").removeClass("cursor-grow");
   }
 );
 

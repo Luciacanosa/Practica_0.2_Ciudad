@@ -1,14 +1,14 @@
 // efectos para el cursor
 
 $(document).mousemove(function (e) {
-  $(".cursor").css({
-    left: e.clientX + "px", // 👈 usa clientX/clientY
+  $(".cursor-news").css({
+    left: e.clientX + "px",
     top: e.clientY + "px",
   });
 });
 
 document.addEventListener("mousemove", (e) => {
-  const el = document.querySelector(".cursor");
+  const el = document.querySelector(".cursor-news");
   if (!el) return;
   el.style.left = e.clientX + "px";
   el.style.top = e.clientY + "px";
@@ -17,10 +17,10 @@ document.addEventListener("mousemove", (e) => {
 // opcional: efecto al pasar por enlaces
 $("a").hover(
   function () {
-    $(".cursor").addClass("cursor-grow");
+    $(".cursor-news").addClass("cursor-grow");
   },
   function () {
-    $(".cursor").removeClass("cursor-grow");
+    $(".cursor-news").removeClass("cursor-grow");
   }
 );
 

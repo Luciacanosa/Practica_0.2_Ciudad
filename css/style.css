@@ -24,11 +24,13 @@ body {
   cursor: none !important;
 }
 
+/* cursor para informacion */
+
 .cursor {
   width: 20px;
   height: 20px;
-  border: 2px solid #ff0000;
-  background-color: #ff0000;
+  border: 2px solid #6e0000;
+  background-color: #6e0000;
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
@@ -42,8 +44,80 @@ body {
 .cursor-grow {
   transform: translate(-50%, -50%) scale(1.6);
   background-color: transparent;
-  border: 2px solid #ff0000;
-  background-color: #ff0000;
+  border: 2px solid #6e0000;
+  background-color: #6e0000;
+}
+
+/* cursor para turismo */
+
+.cursor-turismo {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #725304;
+  background-color: #725304;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+.cursor-grow-turismo {
+  transform: translate(-50%, -50%) scale(1.6);
+  background-color: transparent;
+  border: 2px solid #725304;
+  background-color: #725304;
+}
+
+/* cursor para index */
+
+.cursor-index {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #012074;
+  background-color: #012074;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+.cursor-grow-index {
+  transform: translate(-50%, -50%) scale(1.6);
+  background-color: transparent;
+  border: 2px solid #012074;
+  background-color: #012074;
+}
+
+/* cursor para news */
+
+.cursor-news {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #034b03;
+  background-color: #034b03;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+.cursor-grow-news {
+  transform: translate(-50%, -50%) scale(1.6);
+  background-color: transparent;
+  border: 2px solid #034b03;
+  background-color: #034b03;
 }
 
 /* Reset básico */
