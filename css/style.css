@@ -874,6 +874,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none; /* 👈 quitamos subrayado en enlaces */
 }
 
 /* Bloque alto con imagen */
@@ -893,8 +894,15 @@ body {
   background-color: #0044ff;
   font-size: 26px;
   color: #fff;
+  display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 /* Hover en bloque bajo */
@@ -902,6 +910,7 @@ body {
   background-color: #fff;
   color: #0044ff;
   transform: scale(1.05);
+  text-decoration: none;
 }
 
 /* Centro */
@@ -925,6 +934,7 @@ body {
   background-color: #fff;
   color: #0044ff;
   transform: scale(1.02);
+  text-decoration: none;
 }
 
 .bloque-grid {
@@ -944,19 +954,21 @@ body {
   font-size: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Colores distintos para cada mini-bloque */
 .bloque-grid .mini-bloque:nth-child(2) {
-  background-color: #01237f;
+  background-color: #bdcfff;
   color: #fff;
 }
 .bloque-grid .mini-bloque:nth-child(3) {
-  background-color: #56a8ff;
+  background-color: #bdcfff;
   color: #fff;
 }
 .bloque-grid .mini-bloque:nth-child(4) {
-  background-color: #a9c0ff;
+  background-color: #0044ff;
   color: #fff;
 }
 
@@ -965,6 +977,7 @@ body {
   background-color: #fff;
   color: #0044ff;
   transform: scale(1.05);
+  text-decoration: none; /* 👈 aseguramos que no aparezca subrayado */
 }
 
 /* Mini-bloque con imagen */
@@ -990,7 +1003,6 @@ body {
   flex: 1;
 }
 
-/* responsive para pantallas del movil de la seccion de turismo para e index.html */
 /* Responsive para pantallas pequeñas */
 @media screen and (max-width: 768px) {
   .turismo-collage {
@@ -1120,10 +1132,24 @@ body {
   background-color: #fff3cd; /* azul muy claro para diferenciar */
 }
 
+.turismo-naturaleza-index {
+  padding: 60px 30px;
+  background-color: #bdcfff; /* azul muy claro para diferenciar */
+  color: #bdcfff;
+}
+
 .turismo-naturaleza h2 {
   font-family: "Climate Crisis", sans-serif;
   font-size: 36px;
   color: #b8860b;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.turismo-naturaleza-index h2 {
+  font-family: "Climate Crisis", sans-serif;
+  font-size: 36px;
+  color: #0044ff;
   text-align: center;
   margin-bottom: 30px;
 }
@@ -1234,6 +1260,27 @@ body {
 }
 .turismo-slideshow-dots .dot.active {
   background-color: #b8860b;
+}
+
+.turismo-slideshow-dots-index {
+  text-align: center;
+  margin-top: 12px;
+}
+.turismo-slideshow-dots-index .dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #0044ff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.turismo-slideshow-dots-index .dot:hover {
+  transform: scale(1.12);
+}
+.turismo-slideshow-dots-index .dot.active {
+  background-color: #0044ff;
 }
 
 /* Animación fade */

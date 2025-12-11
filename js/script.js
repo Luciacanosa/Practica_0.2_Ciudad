@@ -187,3 +187,105 @@ function iniciarCarrusel(selector) {
 // Inicia cada carrusel por separado
 iniciarCarrusel(".carrusel.historia");
 iniciarCarrusel(".carrusel.cultura");
+
+// SECCION NATURALEZA
+
+// slideShow.js — versión funcional basada en tu ejemplo
+
+let slideIndex = 1;
+let autoSlide;
+let arrDots;
+
+function initSlideshow() {
+  // Asegura que el DOM está listo y las dots existen
+  arrDots = document.querySelectorAll(".turismo-slideshow-dots .dot");
+  showSlide(slideIndex);
+  startAutoSlide();
+
+  // Eventos de dots
+  for (let k = 0; k < arrDots.length; k++) {
+    arrDots[k].addEventListener("click", function () {
+      stopAutoSlide();
+      currentDotSlide(k);
+      startAutoSlide();
+    });
+  }
+
+  // Flechas
+  const nextSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .next"
+  );
+  const prevSlideArrow = document.querySelector(
+    ".turismo-slideshow-container .prev"
+  );
+
+  nextSlideArrow.addEventListener("click", function () {
+    stopAutoSlide();
+    nextPrevSlide(1);
+    startAutoSlide();
+  });
+
+  prevSlideArrow.addEventListener("click", function () {
+    stopAutoSlide();
+    nextPrevSlide(-1);
+    startAutoSlide();
+  });
+
+  // Pausar autoplay en hover del contenedor
+  const container = document.querySelector(".turismo-slideshow-container");
+  container.addEventListener("mouseenter", stopAutoSlide);
+  container.addEventListener("mouseleave", startAutoSlide);
+}
+
+function nextPrevSlide(index) {
+  slideIndex = slideIndex + index;
+  showSlide(slideIndex);
+}
+
+function currentDotSlide(dotIndex) {
+  slideIndex = dotIndex + 1;
+  showSlide(slideIndex);
+}
+
+function showSlide(slideNumber) {
+  const arrSlides = document.querySelectorAll(
+    ".turismo-slideshow-container .mySlides"
+  );
+
+  if (arrSlides.length === 0) return;
+
+  if (slideNumber > arrSlides.length) {
+    slideIndex = 1;
+  }
+  if (slideNumber < 1) {
+    slideIndex = arrSlides.length;
+  }
+
+  // Oculta todos y desactiva puntos
+  for (let i = 0; i < arrSlides.length; i++) {
+    arrSlides[i].style.display = "none";
+    if (arrDots[i]) {
+      arrDots[i].classList.remove("active");
+    }
+  }
+
+  // Muestra el slide actual y activa su dot
+  arrSlides[slideIndex - 1].style.display = "block";
+  if (arrDots[slideIndex - 1]) {
+    arrDots[slideIndex - 1].classList.add("active");
+  }
+}
+
+function startAutoSlide() {
+  stopAutoSlide();
+  autoSlide = setInterval(function () {
+    nextPrevSlide(1);
+  }, 3000);
+}
+
+function stopAutoSlide() {
+  if (autoSlide) clearInterval(autoSlide);
+}
+
+// Inicializa cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", initSlideshow);
