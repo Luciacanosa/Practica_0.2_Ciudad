@@ -192,7 +192,7 @@ body {
 .burger {
   display: none;
   font-size: 30px;
-  color: #ff0000;
+  color: #333;
   cursor: pointer;
 }
 
@@ -270,7 +270,7 @@ body {
   z-index: 1;
   font-family: "Climate Crisis", sans-serif;
   color: #fff;
-  font-size: clamp(48px, 10vw, 140px);
+  font-size: clamp(30px, 10vw, 100px);
   letter-spacing: 2px;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   will-change: transform, filter;
@@ -292,6 +292,30 @@ body {
     transform: none;
     filter: none;
     opacity: 1;
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .hero-kyoto {
+    height: 80vh;
+    background-position: top center;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .hero-kyoto {
+    height: 60vh;
+    background-position: center top;
+  }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero-kyoto {
+    height: 50vh;
+    background-position: top;
   }
 }
 
@@ -328,7 +352,7 @@ body {
   z-index: 1;
   font-family: "Climate Crisis", sans-serif;
   color: #fff;
-  font-size: clamp(48px, 10vw, 140px);
+  font-size: clamp(30px, 10vw, 10px);
   letter-spacing: 2px;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   will-change: transform, filter;
@@ -350,6 +374,30 @@ body {
     transform: none;
     filter: none;
     opacity: 1;
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .hero-kyoto-turismo {
+    height: 80vh;
+    background-position: top center;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .hero-kyoto-turismo {
+    height: 60vh;
+    background-position: center top;
+  }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero-kyoto-turismo {
+    height: 50vh;
+    background-position: top;
   }
 }
 
@@ -386,7 +434,7 @@ body {
   z-index: 1;
   font-family: "Climate Crisis", sans-serif;
   color: #fff;
-  font-size: clamp(48px, 10vw, 140px);
+  font-size: clamp(30px, 10vw, 100px);
   letter-spacing: 2px;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   will-change: transform, filter;
@@ -408,6 +456,30 @@ body {
     transform: none;
     filter: none;
     opacity: 1;
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .hero-kyoto-informacion {
+    height: 80vh;
+    background-position: top center;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .hero-kyoto-informacion {
+    height: 60vh;
+    background-position: center top;
+  }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero-kyoto-informacion {
+    height: 50vh;
+    background-position: top;
   }
 }
 
@@ -444,7 +516,7 @@ body {
   z-index: 1;
   font-family: "Climate Crisis", sans-serif;
   color: #fff;
-  font-size: clamp(48px, 10vw, 140px);
+  font-size: clamp(30px, 10vw, 100px);
   letter-spacing: 2px;
   text-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
   will-change: transform, filter;
@@ -466,6 +538,30 @@ body {
     transform: none;
     filter: none;
     opacity: 1;
+  }
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1024px) {
+  .hero-kyoto-news {
+    height: 80vh;
+    background-position: top center;
+  }
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+  .hero-kyoto-news {
+    height: 60vh;
+    background-position: center top;
+  }
+}
+
+/* Ajustes para móviles muy pequeños */
+@media (max-width: 480px) {
+  .hero-kyoto-news {
+    height: 50vh;
+    background-position: top;
   }
 }
 
@@ -602,6 +698,49 @@ body {
   font-weight: 600;
 }
 
+/* responsive */
+
+@media (max-width: 768px) {
+  .shishin-intro {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .logo-container {
+    justify-content: center;
+  }
+
+  .shishin-logo {
+    max-width: 160px;
+  }
+
+  .text-content h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .text-content p {
+    font-size: 16px;
+    text-align: left; /* 👈 puedes poner center si prefieres */
+  }
+}
+
+@media (max-width: 480px) {
+  .shishin-logo {
+    max-width: 120px;
+  }
+
+  .text-content h2 {
+    font-size: 22px;
+  }
+
+  .text-content p {
+    font-size: 15px;
+  }
+}
+
 .text-panel-tursimo {
   flex: 1;
   background-color: #fff;
@@ -624,6 +763,48 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .shishin-intro-turismo {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .logo-container-turismo {
+    justify-content: center;
+  }
+
+  .shishin-logo-turismo {
+    max-width: 160px;
+  }
+
+  .text-content-turismo h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .text-content-turismo p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .shishin-logo-turismo {
+    max-width: 120px;
+  }
+
+  .text-content-turismo h2 {
+    font-size: 22px;
+  }
+
+  .text-content-turismo p {
+    font-size: 15px;
+  }
 }
 
 .text-panel-informacion {
@@ -650,6 +831,48 @@ body {
   font-weight: 600;
 }
 
+/* responsive */
+@media (max-width: 768px) {
+  .shishin-intro-informacion {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .logo-container-informacion {
+    justify-content: center;
+  }
+
+  .shishin-logo-informacion {
+    max-width: 160px;
+  }
+
+  .text-content-informacion h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .text-content-informacion p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .shishin-logo-informacion {
+    max-width: 120px;
+  }
+
+  .text-content-informacion h2 {
+    font-size: 22px;
+  }
+
+  .text-content-informacion p {
+    font-size: 15px;
+  }
+}
+
 .text-panel-newsletter {
   flex: 1;
   background-color: #fff;
@@ -672,6 +895,48 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
   font-weight: 600;
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .shishin-intro-newsletter {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .logo-container-newsletter {
+    justify-content: center;
+  }
+
+  .shishin-logo-newsletter {
+    max-width: 160px;
+  }
+
+  .text-content-newsletter h2 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .text-content-newsletter p {
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .shishin-logo-newsletter {
+    max-width: 120px;
+  }
+
+  .text-content-newsletter h2 {
+    font-size: 22px;
+  }
+
+  .text-content-newsletter p {
+    font-size: 15px;
+  }
 }
 
 /* sección resumen sobre kyoto de la página pricipal */
