@@ -1096,6 +1096,8 @@ body {
     border-radius: 12px;
   }
 }
+
+/* felxbox en el index.html */
 .turismo-collage {
   display: flex;
   gap: 20px;
@@ -1139,7 +1141,7 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none; /* 👈 quitamos subrayado en enlaces */
+  text-decoration: none;
 }
 
 /* Bloque alto con imagen */
@@ -1242,7 +1244,7 @@ body {
   background-color: #fff;
   color: #0044ff;
   transform: scale(1.05);
-  text-decoration: none; /* 👈 aseguramos que no aparezca subrayado */
+  text-decoration: none;
 }
 
 /* Mini-bloque con imagen */
