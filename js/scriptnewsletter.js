@@ -186,3 +186,72 @@ $(document).ready(function () {
     });
   }, 7000);
 });
+
+// chart js
+
+document.addEventListener("DOMContentLoaded", function () {
+  const ctx = document.getElementById("turismoChart").getContext("2d");
+
+  const turismoChart = new Chart(ctx, {
+    type: "bar", // puedes cambiar a 'line' si prefieres
+    data: {
+      labels: [
+        "Enero",
+        "Febrero",
+        "Marzo",
+        "Abril",
+        "Mayo",
+        "Junio",
+        "Julio",
+        "Agosto",
+        "Septiembre",
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+      ],
+      datasets: [
+        {
+          label: "Número de turistas",
+          data: [
+            12000, 15000, 18000, 25000, 30000, 28000, 35000, 40000, 27000,
+            22000, 16000, 13000,
+          ],
+          backgroundColor: [
+            "rgba(75, 192, 192, 0.6)", // invierno
+            "rgba(75, 192, 192, 0.6)",
+            "rgba(255, 206, 86, 0.6)", // primavera
+            "rgba(255, 206, 86, 0.6)",
+            "rgba(255, 206, 86, 0.6)",
+            "rgba(54, 162, 235, 0.6)", // verano
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(54, 162, 235, 0.6)",
+            "rgba(153, 102, 255, 0.6)", // otoño
+            "rgba(153, 102, 255, 0.6)",
+            "rgba(153, 102, 255, 0.6)",
+            "rgba(75, 192, 192, 0.6)",
+          ],
+          borderColor: "rgba(0,0,0,0.8)",
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: "Turistas",
+          },
+        },
+        x: {
+          title: {
+            display: true,
+            text: "Meses",
+          },
+        },
+      },
+    },
+  });
+});
